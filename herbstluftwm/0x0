@@ -1,0 +1,130 @@
+#! /usr/bin/env bash
+#example usage: sh ~/.config/i3/0x0 area
+#area = screenshot area and upload to 0x0
+#window = screnshot window and upload to 0x0
+#screen = screenshot root and upload to 0x0
+#4 = upload text currently selected with your mouse to 0x0
+#delaya = screenshot area after a delay, needs a second argument, that decides on the delay
+case $1 in
+    "area"*)
+        maim -u ~/Screenshots/Newest/newest.png -s &&
+        cd ~/Screenshots/Newest &&
+        curl -F'file=@newest.png' https://0x0.st | xclip -i -selection clipboard &&
+        mv ~/Screenshots/Newest/newest.png ~/Screenshots/"area $(date +%Y-%m-%dT%H:%M:%SZ).png" &&
+        notify-send "Area Screenshot in clipboard"
+    ;;
+    "direct"*)
+        maim -u -s| xclip -sel c -t image/png
+    ;;
+    "bloat"*)
+        flameshot gui
+    ;;
+    "window"*)
+	maim  ~/Screenshots/Newest/window.png -i "$(xdotool getactivewindow)" &&
+        cd ~/Screenshots/Newest &&
+        curl -F'file=@newest.png' https://0x0.st | xclip -i -selection clipboard &&
+	mv ~/Screenshots/Newest/window.png ~/Screenshots/"window $(date +%Y-%m-%dT%H:%M:%SZ).png" &&
+        notify-send "Window in clipboard"
+    ;;
+    "screen"*)
+        maim ~/Screenshots/Newest/screen.png &&
+        cd ~/Screenshots/Newest &&
+        curl -F 'file=@screen.png' https://0x0.st | xclip -i -selection clipboard &&
+        mv ~/Screenshots/Newest/screen.png ~/Screenshots/"screen $(date +%Y-%m-%dT%H:%M:%SZ).png" &&
+        notify-send "Screen in clipboard"
+	;;
+    "text"*)
+        xclip -o -selection  | curl -F file=@'-' 0x0.st | xclip -i -selection clipboard &&
+        notify-send "0x0" "Text in 0x0"
+    ;;
+    "delaya"*)
+        delay=$2
+        if [[ -z $2 ]]
+        then
+            delay=3
+        fi
+        maim -s -d "$delay" ~/Screenshots/Newest/delaya.png &&
+        cd ~/Screenshots/Newest &&
+        curl -F 'file=@delaya.png' 0x0.st | xclip -i -selection clipboard &&
+        mv ~/Screenshots/Newest/delaya.png ~/Screenshots/"delayarea $(date +%Y-%m-%dT%H:%M:%SZ).png" &&
+        notify-send "Delayed area in clipboard"
+    ;;
+    "recorda"*)
+
+	dir=/tmp/record
+	sock=$dir/sock
+	pidfile=$dir/pid
+	quality=1
+	rate=30
+
+	[ ! -d $dir ] && mkdir -p $dir
+
+	isrunning() {
+	    if [ -f $pidfile ] && kill -0 $(cat $pidfile) 2> /dev/null ; then
+		return 0
+	    else
+		return 1
+	    fi
+	}
+
+	case "$1" in
+	    *h|*help)
+		printf "%s\n%s\n%s\n%s\n%s\n" \
+		    "Options:" \
+		    "------------------------" \
+		    "--toggle|-t     -  toggle active/paused" \
+		    "--stop|-s       -  end recording" \
+		    "<no option>  -  record"
+		;;
+	    *s|*stop)
+		if $(isrunning) ; then
+		    echo q >> $sock
+		    rm -r $dir
+		else
+		    echo "Nothing currently being recorded."
+		    exit 1
+		fi
+		;;
+	    *t|*toggle)
+		if ! $(isrunning) ; then
+		    echo "Nothing currently being recorded."
+		    exit 1
+		fi
+
+		pid=$(cat $pidfile)
+		case $(command ps -o state= $pid) in
+		    S)
+			kill -s STOP $pid
+			echo "Pausing..."
+			;;
+		    T)
+			kill -s CONT $pid
+			echo "Resuming..."
+		esac
+		;;
+	    *)
+		if $(isrunning) ; then
+		    echo "Another recording instance already exists!"
+		    exit 1
+		fi
+
+		echo > $sock
+
+		set $(slop -q -o -f '%x %y %w %h')
+
+		# NOTE: use this for firefox auto-embed compatibility, although needs ffmpeg-4.0.2+ "-pix_fmt yuv420p"
+
+		<$sock ffmpeg -y -f x11grab -s ${3}x${4} \
+		    -r $rate -i :0.0+${1},${2} -vcodec libx264 -qscale $quality \
+		    "$(date '+%a %b %d - %l:%M %p')".mp4 1> /dev/null 2> /tmp/record_log &
+
+		# set to the last core, (helps when recording games
+		# that are single threaded)
+		taskset -pc $(echo "$(nproc) - 1" | bc) $!
+
+		# set our priority to be last, (don't bog down the computer)
+		renice 999 $! > /dev/null
+
+		echo $! > $pidfile
+	esac
+    esac

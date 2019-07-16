@@ -1,0 +1,16 @@
+#!/bin/bash
+root="$HOME/Documents/Backup/"
+cd "$HOME" || exit 1
+cp -R "$HOME/.config/herbstluftwm/" "$root"
+cp -R "$HOME/.config/dunst/" "$root"
+cp -R "$HOME/.config/termite/" "$root"
+cp -R "$HOME/.config/nvim/" "$root"
+cp -R "$HOME/.config/rofi/" "$root"
+cp -R "$HOME/.config/music.md" "$root"
+cp -R "$HOME/.config/polybar" "$root"
+cp -R "$HOME/.zshrc" "$root"
+cp -R "$HOME/.zsh/" "$root"
+cp -R "$HOME/.zpreztorc" "$root"
+cp -R "$HOME/.zprezto/" "$root"
+cp -R "$HOME/.config/wallpaper.jpg" "$root"
+cp -R "$HOME/.config/shows.md" "$root"

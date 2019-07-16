@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+for i in $(herbstclient layout | grep FOCUS | grep -oiE '0x[0-9a-f]*') ; do herbstclient close_and_remove "$i" ; done
+
