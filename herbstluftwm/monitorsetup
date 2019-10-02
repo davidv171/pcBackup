@@ -1,4 +1,6 @@
 #!/bin/bash
-xrandr --output DisplayPort-0 --auto --right-of HDMI-A-0
-xrandr --output HDMI-A-0 --auto --left-of DisplayPort-0
+xrandr --output HDMI-A-0 --auto --right-of DisplayPort-0
+xrandr --output DisplayPort-0 --auto --left-of HDMI-A-0
+xrandr --output DisplayPort-1 --auto --left-of DisplayPort-0
+xrandr --output DisplayPort-2 --auto --right-of HDMI-A-0
 nitrogen --restore

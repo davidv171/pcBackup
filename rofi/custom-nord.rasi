@@ -1,13 +1,13 @@
 /*https://github.com/devdevdevdevdeo/dotfiles/blob/master/custom-nord.rasi*/
 * {
-    backgroundcolor: #f3f3f3;
+    backgroundcolor: #282c34;
     bg1: #df0000;
-    backgroundcoloralternate: #f3f3f3;
-    separatorcolor: #4271ae;
-    scrollbarcolor: #4271ae;
-    foregroundcolor: #4d4d4c;
-    foregroundcolorinverse: #f3f3f3;
-    selectioncolor: #4271ae;
+    backgroundcoloralternate: #282c34;
+    separatorcolor: #5699AF;
+    scrollbarcolor: #5699AF;
+    foregroundcolor: #bbc2cf;
+    foregroundcolorinverse: #2d2d2d;
+    selectioncolor: #5699AF;
 
     font-size: 1px;
     border-color: @separatorcolor;
@@ -61,11 +61,11 @@
 }
 
 #element.normal.active {
-    background-color: #f3f3f3;
+    background-color: #282c34;
 }
 
 #element.alternate.active {
-    background-color: #f3f3f3;
+    background-color: #282c34;
 }
 
 #element.selected.active {

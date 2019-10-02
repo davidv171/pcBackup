@@ -80,6 +80,8 @@ hc keybind $Mod-Shift-m spawn bash "$HOME/.config/herbstluftwm/toggle_single_flo
 hc keybind $Mod-Shift-cedilla move_index cedilla
 hc keybind $Mod-Shift-p texToPDF
 hc keybind $Mod-Shift-e spawn emacsclient -ca "" &
+hc keybind $Mod-Shift-g spawn giph -l -c 0.3,0,0.5,0.3 -s "$HOME/Videos/Giph/$(date +%Y-%M-%dZ%hh:%mm)" && notify-send "Done saving"
+hc keybind $Mod-Control-g spawn killall -INT -g giph
 # basic movement
 # focusing clients
 hc keybind $Mod-Left  focus left
@@ -192,7 +194,6 @@ hc add 11
 hc add 12
 hc add 13
 hc keybind $Mod-0 use 0
-hc keybind cedilla use cedilla
 hc keybind $Mod-s use s
 hc keybind $Mod-Shift-s move s
 hc keybind $Mod-d use d
@@ -269,34 +270,36 @@ hc keybind $Mod-i jumpto urgent
 
 
 
+background='#282c34'
+foreground='#bbc2cf'
 
 # theme
 #
 # ---------------------------------------------------------------------------------------------------------------------------------------
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#4d4d4c'
-hc set frame_border_normal_color '#f3f3f3'
-hc set frame_bg_normal_color '#f3f3f3'
-hc set frame_bg_active_color '#4d4d4c'
+hc set frame_border_active_color "$foreground"
+hc set frame_border_normal_color "$background"
+hc set frame_bg_normal_color "$background"
+hc set frame_bg_active_color "$foreground"
 hc set frame_border_width 3
 hc set always_show_frame 0
 hc set frame_bg_transparent 1
 hc set frame_transparent_width 0
 hc set frame_gap 10
 hc set update_dragged_clients 1
-hc attr theme.active.color '#4d4d4c'
-hc attr theme.normal.color '#f3f3f3'
+hc attr theme.active.color "$foreground"
+hc attr theme.normal.color "$background"
 hc attr theme.urgent.color red
 hc attr theme.inner_width 0
 hc attr theme.inner_color black
 hc attr theme.border_width 6
 hc attr theme.floating.border_width 2
 hc attr theme.floating.outer_width 2
-hc attr theme.floating.outer_color '#f3f3f3'
-hc attr theme.active.inner_color '#f3f3f3'
-hc attr theme.active.outer_color '#f3f3f3'
-hc attr theme.background_color '#f3f3f3'
+hc attr theme.floating.outer_color "$background"
+hc attr theme.active.inner_color "$background"
+hc attr theme.active.outer_color "$background"
+hc attr theme.background_color "$background"
 
 
 
@@ -326,7 +329,8 @@ hc set mouse_recenter_gap 1
 
 
 
-
+#Whatever you spawn more windows of, needs to be here
+pinned="Wine|Steam"
 # rules
 # ---------------------------------------------------------------------------------------------------------------------------------------
 hc unrule -F
@@ -344,10 +348,15 @@ hc rule class="vlc" pseudotile=on
 hc set tree_style '╾│ ├└╼─┐'
 # CUSTOM RULES ________________
 hc rule focus=on # normally focus new clients
-hc rule class="mpv" tag=9
+#hc rule class="mpv" tag=0
 hc rule class="discord" tag=4
 hc rule class="scratch" tag=scratchpad
 hc rule class="tc" tag=4
+hc rule class="Firefox" floating=on
+hc rule class="Chromium-browser" tag=1 floating=on
+hc rule class="Steam" hook=pin
+hc rule class="Wine" hook=pin
+hc rule class="League Of Legends" tag=4
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -368,7 +377,7 @@ hc rule class="tc" tag=4
 
 
 
-hc spawn monitorsetup
+hc spawn bash monitorsetup
 hc focus_crosses_monitor_boundaries 1
 hc set smart_frame_surroundings 1
 hc set smart_window_surroundings 1
@@ -386,7 +395,7 @@ hc unlock
 {
     pids=( )
     # reserve some space for the panel on monitor 0
-    hc pad 0 25
+    hc pad 0 30
     # start the panel itself and remember its pid
     polybar bspwm &
     pids+=( $! )
@@ -460,45 +469,29 @@ lock_tag_to_monitor() {
 
 
 
+primary="0"
+secondary="1"
+ancient="3"
+tv="2"
 
+lock_tag_to_monitor 2 $secondary
+lock_tag_to_monitor 1 $primary
+lock_tag_to_monitor 3 $primary
+lock_tag_to_monitor 4 $primary
+lock_tag_to_monitor 5 $primary
+lock_tag_to_monitor 6 $primary
+lock_tag_to_monitor 7 $secondary
+lock_tag_to_monitor 8 $secondary
+lock_tag_to_monitor 9 $ancient
+lock_tag_to_monitor 0 $tv
+lock_tag_to_monitor 11 $primary
+lock_tag_to_monitor 12 $primary
+lock_tag_to_monitor 13 $primary
+lock_tag_to_monitor s $primary
+lock_tag_to_monitor d $secondary
+lock_tag_to_monitor a $ancient
 
-lock_tag_to_monitor 2 2
-lock_tag_to_monitor 1 0
-lock_tag_to_monitor 3 0
-lock_tag_to_monitor 4 0
-lock_tag_to_monitor 5 0
-lock_tag_to_monitor 6 0
-lock_tag_to_monitor 7 2
-lock_tag_to_monitor 8 0
-lock_tag_to_monitor 9 1
-lock_tag_to_monitor 0 1
-lock_tag_to_monitor 11 0
-lock_tag_to_monitor 12 0
-lock_tag_to_monitor 13 0
 lock_tag_to_monitor cedilla 1
-lock_tag_to_monitor s 0
-lock_tag_to_monitor d 2
-lock_tag_to_monitor a 0
-if [[ $(hc getenv place) == "work" ]];then
-    lock_tag_to_monitor 7 1
-    lock_tag_to_monitor 2 0
-    lock_tag_to_monitor s 0
-    lock_tag_to_monitor d 1
-fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -521,12 +514,25 @@ if hc silent new_attr bool my_not_first_autostart ; then
     hc spawn firefox &
     hc spawn emacs --daemon
     hc spawn ~/.config/herbstluftwm/wifi-connect.lua
+    hc spawn "$HOME/Documents/AppImages/Chatterino-x86_64.AppImage" &
     hc spawn google-chrome-stable --app=https://listen.tidal.com &
     hc spawn google-chrome-stable --app=chromium --app=https://discordapp.com/channels/@me/ &
-    hc spawn "$HOME/Documents/AppImages/tc.AppImage" &
     hc spawn ~/Documents/yes/xflux -l 46.554649 -g 15.645881 -k 3100
     hc spawn bash ~/.config/herbstluftwm/dialogs &
+    hc spawn bash ~/.config/herbstluftw/maximize &
+    hc spawn bash ~/.config/herbstlutwm/pin.sh 10000 &
 fi
 
+# Focus them on startup
+
+hc focus_monitor 3
+hc use a
+hc focus_monitor 1
+hc use 2
+hc focus_monitor 2
+hc use 0
+hc focus_monitor 0
+hc use 1
 #-----------------------------------
 #vim:ft=sh
+

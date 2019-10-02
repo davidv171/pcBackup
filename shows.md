@@ -19,6 +19,7 @@
 - Rome -> drama, history
 - True Detective -> Season 1 is god tier, the rest is good enough to warrant top tier
 - Happy Endings -> sitcom type, surprisingly good
+- The Boys -> Superhero show but the superheroes are the bad guys
 
 ## Really good
 
@@ -72,3 +73,11 @@
 - Vampire Diaries and every spinoff -> painfully predictable, dialog is meant for Tumblr gif quotes
 - Friends -> you zoomers weren't alive when this was funny
 - Dr.House -> predictable, boring episodes, but good background noise, doctor shit
+
+
+## TODO:
+
+Stuff I have to watch
+- Knightfall S2
+- Bad Omens
+- Trailer Park Boys

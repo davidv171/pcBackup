@@ -86,6 +86,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
     Plug 'itspriddle/vim-shellcheck'
 
+    Plug 'dkarter/bullets.vim'
+
+    Plug 'ryanoasis/vim-devicons'
+
+    Plug 'janko/vim-test'
+
 call plug#end()
 
 
@@ -143,6 +149,89 @@ let g:go_fmt_command = "goimports"
 " Status line types/signatures.
 let g:go_auto_type_info = 1
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go :call Pee_pee()
 set background=light
 set termguicolors
 
+" Tabs bruh
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
+
+nnoremap <C-y> 1gt<CR>
+nnoremap <C-x> 2gt<CR>
+nnoremap <C-b> 4gt<CR>
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>
+nnoremap <F1> 1gt<CR>
+nnoremap <F2> 2gt<CR>
+nnoremap <F3> 3gt<CR>
+nnoremap <F4> 4gt<CR>
+nnoremap <F5> 5gt<CR>
+nnoremap <F6> 6gt<CR>
+nnoremap <F7> 7gt<CR>
+nnoremap <F8> 8gt<CR>
+nnoremap <F9> 9gt<CR>
+nnoremap <F0> 10gt<CR>
+
+nnoremap H gT
+nnoremap L gt
+
+
+
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" In Neovim, you can set up fzf window using a Vim command
+let g:fzf_layout = { 'window': 'enew' }
+let g:fzf_layout = { 'window': '-tabnew' }
+let g:fzf_layout = { 'window': '10new' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+set rtp+=~/.fzf
+
+map <C-f> :FZF<CR>
+
+
+set splitbelow
+set splitright
+
+fu! Pee_pee()
+    let path = expand('%:p:r')
+    let test_path = path . "_test.go"
+    edit test_path
+endfunc

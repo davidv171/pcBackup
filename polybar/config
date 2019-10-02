@@ -6,7 +6,7 @@
 ;
 ;------------;
 width = 100%
-height = 25
+height = 30
 offset-y = 0
 offset-x = 0
 bottom = false
@@ -20,16 +20,14 @@ monitor-strict=true
 ;----------;
 
 
-monitor = DisplayPort-0
+monitor = HDMI-A-0
 wm-restack = none
 override-redirect = false
-scroll-up = mi u
-scroll-down = mi d
 ;-------;
 ; FONTS ;
 ;-------;
 
-font-0 = Hack :size=7;3
+font-0 = Hack :size=12;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
@@ -41,9 +39,9 @@ font-5 = "FontAwesome:pixelsize=8;2"
 ;--------;
 
 
-border-color = #f3f3f3
-background = #f3f3f3
-foreground = #4d4d4c
+border-color = #282c34
+background = #282c34
+foreground = #bbc2cf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -188,7 +186,7 @@ format-volume-foreground = #4271ae
 ;   <ramp-volume>
 ;   <bar-volume>
 format-volume = <ramp-volume> <label-volume>
-format-foreground = #df0000
+format-foreground = #bfbfbf
 ; Available tags:
 ;   <label-muted> (default)
 ;   <ramp-volume>
