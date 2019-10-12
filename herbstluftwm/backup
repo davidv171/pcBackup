@@ -15,3 +15,6 @@ cp -R "$HOME/.zprezto/" "$root"
 cp -R "$HOME/.config/wallpaper.jpg" "$root"
 cp -R "$HOME/.config/shows.md" "$root"
 cp -R "$HOME/.config/books.md" "$root"
+# DOOM EMACS
+cp -R "$HOME/.doom.d" "$root"
+cp -R "$HOME/.emacs.d" "$root"

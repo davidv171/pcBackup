@@ -17,7 +17,7 @@ set hlsearch  " highlight matches
     map <C-h> <C-W>h
     map <C-l> <C-W>l
     xnoremap <silent> ( <ESC>:let p = &paste<CR>:set paste<CR>:let a = line2byte(line('.')) + col('.')<CR>gvc()<ESC>:if getregtype() ==# 'V'<CR>call setreg('"', substitute(@", '\n$', '', ''), 'c')<CR>endif<CR>P:exe "goto ".a<CR>:exe "let &paste=".p<CR>
-:imap jk <Esc>
+:imap kj <Esc>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
@@ -92,6 +92,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
     Plug 'janko/vim-test'
 
+    Plug 'joshdick/onedark.vim'
+
 call plug#end()
 
 
@@ -99,24 +101,13 @@ call plug#end()
 map <C-n> :NERDTreeToggle<CR>
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding'], ['filetype','C', 'F', 'Z'] ]
       \ },
       \ }
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'override' : {
-  \         'color00' : ['#f3f3f3', '232'],
-  \         'linenumber_bg' : ['#f3f3f3', '232']
-  \       }
-  \     }
-  \   }
-  \ }
-
 
 
 let g:deoplete#enable_at_startup = 1
@@ -229,9 +220,6 @@ map <C-f> :FZF<CR>
 
 set splitbelow
 set splitright
+syntax on
+colorscheme onedark
 
-fu! Pee_pee()
-    let path = expand('%:p:r')
-    let test_path = path . "_test.go"
-    edit test_path
-endfunc
