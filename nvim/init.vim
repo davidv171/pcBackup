@@ -94,6 +94,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
     Plug 'joshdick/onedark.vim'
 
+    Plug 'zxqfl/tabnine-vim'
+
 call plug#end()
 
 

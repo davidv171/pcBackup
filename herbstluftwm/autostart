@@ -59,14 +59,13 @@ hc keybind XF86AudioMute spawn amixer -D amixer -D pulse set Master 1+ toggle # 
 hc keybind $Mod-b spawn firefox
 hc keybind $Mod-Shift-b spawn firefox -private
 hc keybind $Mod-r spawn nautilus
-hc keybind $Mod-Shift-x spawn ~/.config/herbstluftwm/0x0 area
+hc keybind $Mod-Shift-x spawn bash ~/.config/herbstluftwm/davidv7.xyz upload
 hc keybind $Mod-Control-x spawn ~/.config/herbstluftwm/0x0 direct
 hc keybind $Mod-x spawn ~/.config/herbstluftwm/0x0 bloat
 hc keybind $Mod-Control-c spawn ~/.config/herbstluftwm/0x0 text
 hc keybind $Mod-u spawn ~/.config/herbstluftwm/0x0 recorda
 hc keybind $Mod-Shift-t spawn ~/Documents/Projects/Theatron/scripts/simplewatch
 hc keybind $Mod-n spawn polybar bspwm || killall polybar
-hc keybind $Mod-Control-w spawn stalonetray || killall stalonetray
 hc keybind $Mod-g set_layout grid
 hc keybind $Mod-z set_layout max
 hc keybind $Mod-Shift-z cycle_layout +1
@@ -330,7 +329,6 @@ hc set mouse_recenter_gap 1
 
 
 #Whatever you spawn more windows of, needs to be here
-pinned="Wine|Steam"
 # rules
 # ---------------------------------------------------------------------------------------------------------------------------------------
 hc unrule -F
@@ -349,7 +347,7 @@ hc set tree_style '╾│ ├└╼─┐'
 # CUSTOM RULES ________________
 hc rule focus=on # normally focus new clients
 #hc rule class="mpv" tag=0
-hc rule class="discord" tag=4
+hc rule class="discord" tag=a
 hc rule class="scratch" tag=scratchpad
 hc rule class="tc" tag=4
 hc rule class="Firefox" floating=on
@@ -471,8 +469,8 @@ lock_tag_to_monitor() {
 
 primary="0"
 secondary="1"
-ancient="3"
-tv="2"
+ancient="2"
+tv="3"
 
 lock_tag_to_monitor 2 $secondary
 lock_tag_to_monitor 1 $primary
@@ -504,7 +502,7 @@ if hc silent new_attr bool my_not_first_autostart ; then
     hc spawn dunst &
     hc spawn flameshot &
     hc spawn ~/Documents/Projects/Theatron/scripts/pollingservice 60
-    hc spawn compton --inactive-dim 0.1 &
+    hc spawn compton --inactive-dim 0.1 -c &
     hc spawn xdo lower -N Polybar &
     hc spawn xinput --set-prop 9 'libinput Accel Speed' 1 &
     hc spawn nm-applet &
@@ -521,6 +519,7 @@ if hc silent new_attr bool my_not_first_autostart ; then
     hc spawn bash ~/.config/herbstluftwm/dialogs &
     hc spawn bash ~/.config/herbstluftw/maximize &
     hc spawn bash ~/.config/herbstlutwm/pin.sh 10000 &
+    hc spawn xset l 1 1 &
 fi
 
 # Focus them on startup

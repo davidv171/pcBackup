@@ -57,7 +57,8 @@
 - Wynona Earp -> supernatural, western type
 - Modern Family -> family comedy
 - Orphan Black -> fantasy crime mystery
--
+- Into The Badlands -> Alternative future, dystopia, great sword play
+- Silicon Valley -> tech comedy
 
 ## Background noise
 

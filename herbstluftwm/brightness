@@ -16,3 +16,4 @@ var=$((cur $1 max * $2 / 100))
 [ $var -lt "$min" ] && var=$min
 
 echo $var > $dir/brightness
+
