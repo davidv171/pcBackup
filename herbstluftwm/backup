@@ -1,5 +1,5 @@
 #!/bin/bash
-root="$HOME/Documents/Backup/"
+root="$HOME/Documents/dots/"
 cd "$HOME" || exit 1
 cp -R "$HOME/.config/herbstluftwm/" "$root"
 cp -R "$HOME/.config/dunst/" "$root"

@@ -7,6 +7,7 @@ hc() {
 
 hc emit_hook reload
 #wmname LG3D
+echo "Starting hlwm"
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -23,7 +24,8 @@ Mod=Mod4
 
 
 
-
+primary="1"
+secondary="0"
 
 
 
@@ -49,17 +51,10 @@ hc keybind $Mod-Return spawn "$terminal"
 hc keybind $Mod-Shift-Return spawn sh "$HOME/.config/herbstluftwm/newFrameAndTerminal" right "$terminal"
 hc keybind $Mod-Tab spawn rofi -show combi
 hc keybind $Mod-Shift-Tab spawn rofi -show drun
-hc keybind $Mod-o spawn opera
-hc keybind XF86MonBrightnessUp spawn sh  "$HOME/.config/herbstluftwm/systemControl" brightnessUp 5
-hc keybind XF86MonBrightnessDown spawn sh "$HOME/.config/herbstluftwm/systemControl" brightnessDown 5
-hc keybind XF86AudioRaiseVolume spawn sh "$HOME/.config/herbstluftwm/systemControl" volumeUp 5
-# Lower Volume
-hc keybind XF86AudioLowerVolume spawn sh "$HOME/.config/herbstluftwm/systemControl" volumeDown 5
-hc keybind XF86AudioMute spawn amixer -D amixer -D pulse set Master 1+ toggle # Toggle muting
 hc keybind $Mod-b spawn firefox
 hc keybind $Mod-Shift-b spawn firefox -private
 hc keybind $Mod-r spawn nautilus
-hc keybind $Mod-Shift-x spawn bash ~/.config/herbstluftwm/davidv7.xyz upload
+hc keybind $Mod-Shift-x spawn bash ~/Documents/Scripts/screenshot.sh
 hc keybind $Mod-Control-x spawn ~/.config/herbstluftwm/0x0 direct
 hc keybind $Mod-x spawn ~/.config/herbstluftwm/0x0 bloat
 hc keybind $Mod-Control-c spawn ~/.config/herbstluftwm/0x0 text
@@ -81,6 +76,8 @@ hc keybind $Mod-Shift-p texToPDF
 hc keybind $Mod-Shift-e spawn emacsclient -ca "" &
 hc keybind $Mod-Shift-g spawn giph -l -c 0.3,0,0.5,0.3 -s "$HOME/Videos/Giph/$(date +%Y-%M-%dZ%hh:%mm)" && notify-send "Done saving"
 hc keybind $Mod-Control-g spawn killall -INT -g giph
+hc keybind $Mod-o spawn bash "$HOME/.config/herbstluftwm/pulsesink.sh"
+hc keybind $Mod-Shift-o spawn bash "$HOME/.config/herbstluftwm/pulsesink.sh" mute
 # basic movement
 # focusing clients
 hc keybind $Mod-Left  focus left
@@ -112,6 +109,7 @@ chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 
 
 
+echo "Done with keybinds"
 
 
 
@@ -163,7 +161,7 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 
 
-
+echo "Setting up tags"
 
 
 
@@ -215,7 +213,7 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 
 
 
-
+echo "Done with tags"
 
 
 
@@ -347,14 +345,8 @@ hc set tree_style '╾│ ├└╼─┐'
 # CUSTOM RULES ________________
 hc rule focus=on # normally focus new clients
 #hc rule class="mpv" tag=0
-hc rule class="discord" tag=a
-hc rule class="scratch" tag=scratchpad
-hc rule class="tc" tag=4
-hc rule class="Firefox" floating=on
-hc rule class="Chromium-browser" tag=1 floating=on
-hc rule class="Steam" hook=pin
-hc rule class="Wine" hook=pin
-hc rule class="League Of Legends" tag=4
+hc rule class="discord" tag=4
+hc rule class="spotify" tag=4
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -393,7 +385,7 @@ hc unlock
 {
     pids=( )
     # reserve some space for the panel on monitor 0
-    hc pad 0 30
+    hc pad $primary 30
     # start the panel itself and remember its pid
     polybar bspwm &
     pids+=( $! )
@@ -467,10 +459,6 @@ lock_tag_to_monitor() {
 
 
 
-primary="0"
-secondary="1"
-ancient="2"
-tv="3"
 
 lock_tag_to_monitor 2 $secondary
 lock_tag_to_monitor 1 $primary
@@ -501,37 +489,22 @@ if hc silent new_attr bool my_not_first_autostart ; then
     hc spawn nitrogen --restore &
     hc spawn dunst &
     hc spawn flameshot &
+
     hc spawn ~/Documents/Projects/Theatron/scripts/pollingservice 60
-    hc spawn compton --inactive-dim 0.1 -c &
+    hc spawn compton --inactive-dim 0.1 -c -C &
     hc spawn xdo lower -N Polybar &
     hc spawn xinput --set-prop 9 'libinput Accel Speed' 1 &
-    hc spawn nm-applet &
-    hc spawn gpodder &
     hc add dialog
     hc spawn xset b off
     hc spawn firefox &
     hc spawn emacs --daemon
-    hc spawn ~/.config/herbstluftwm/wifi-connect.lua
-    hc spawn "$HOME/Documents/AppImages/Chatterino-x86_64.AppImage" &
-    hc spawn google-chrome-stable --app=https://listen.tidal.com &
-    hc spawn google-chrome-stable --app=chromium --app=https://discordapp.com/channels/@me/ &
-    hc spawn ~/Documents/yes/xflux -l 46.554649 -g 15.645881 -k 3100
     hc spawn bash ~/.config/herbstluftwm/dialogs &
     hc spawn bash ~/.config/herbstluftw/maximize &
-    hc spawn bash ~/.config/herbstlutwm/pin.sh 10000 &
     hc spawn xset l 1 1 &
+    hc spawn discord &
+    hc spawn spotify &
 fi
 
-# Focus them on startup
-
-hc focus_monitor 3
-hc use a
-hc focus_monitor 1
-hc use 2
-hc focus_monitor 2
-hc use 0
-hc focus_monitor 0
-hc use 1
 #-----------------------------------
 #vim:ft=sh
 

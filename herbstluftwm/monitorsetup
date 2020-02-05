@@ -1,10 +1,10 @@
 #!/bin/bash
 # primary
-xrandr --output HDMI-A-0 --auto --right-of DisplayPort-0
+xrandr --output HDMI-A-0 --auto --right-of DisplayPort-0 --primary
 # samsung
 xrandr --output DisplayPort-0 --auto --left-of HDMI-A-0
 #tv
-xrandr --output DisplayPort-2 --auto --left-of DisplayPort-0
+xrandr --output DisplayPort-2 --auto --left-of DisplayPort-0 --off
 # old monitor
 xrandr --output DisplayPort-1 --auto --right-of HDMI-A-0
 # wallapper

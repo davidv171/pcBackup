@@ -28,11 +28,11 @@ override-redirect = false
 ;-------;
 
 font-0 = Hack :size=12;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
-font-4 = "Terminus:pixelsize=8;2"
-font-5 = "FontAwesome:pixelsize=8;2"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
+font-4 = "Terminus:pixelsize=10;2"
+font-5 = "FontAwesome:pixelsize=10;2"
 
 ;--------;
 ; COLORS ;
@@ -65,7 +65,7 @@ module-margin = 1.5
 
 modules-center = title focusedw
 modules-left = date time memory
-modules-right = go-weather volume cpu
+modules-right = player-mpris volume cpu
 
 
 
@@ -225,6 +225,16 @@ interval = 1
 type = custom/script
 exec = ~/.config/herbstluftwm/go-weather
 interval = 300
+
+
+[module/player-mpris]
+type = custom/script
+exec = ~/Documents/Scripts/player-mpris.sh
+interval = 3
+click-left = playerctl previous &
+click-right = playerctl next &
+click-middle = playerctl play-pause &
+
 [module/monitor]
 type = custom/script
 exec = ~/.config/herbstluftwm/currentMonitor
@@ -364,11 +374,11 @@ scroll-down = i3wm-wsprev
 ;-------;
 
 font-0 = Nerd:size=6;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
-font-4 = "Terminus:pixelsize=8;2"
-font-5 = "FontAwesome:pixelsize=8;2"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=14;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=14;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=14;3"
+font-4 = "Terminus:pixelsize=14;2"
+font-5 = "FontAwesome:pixelsize=14;2"
 ;--------;
 ; COLORS ;
 ;--------;
