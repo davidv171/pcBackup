@@ -1,0 +1,25 @@
+#!/bin/bash
+#vim ft:sh
+
+file="$HOME/.local/manclipf"
+touch $file
+
+
+while true
+do
+
+    clipc="$(xclip -selection clipboard -o)"
+
+    if [[ -z $clipc ]]; then
+
+	xclip -selection clipboard < $file
+	echo "Empty clipboard"
+
+    fi
+
+    echo $clipc > $file
+    echo "$clipc"
+
+    sleep 0.5
+
+done
