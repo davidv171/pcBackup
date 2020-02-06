@@ -7,11 +7,10 @@ hc() {
 
 hc emit_hook reload
 #wmname LG3D
-echo "Starting hlwm"
 
 # remove all existing keybindings
 hc keyunbind --all
-hc spawn bash "$HOME/.config/herbstluftwm/dialogListener"
+hc spawn bash "$HOME/.config/herbstluftwm/dialogListener" &
 hc set default_frame_layout 3
 hc spawn xset b off
 terminal="termite"
@@ -23,10 +22,12 @@ Mod=Mod4
 
 
 
-
 primary="1"
 secondary="0"
 
+hc spawn xset b off &
+terminal="termite"
+scripts="$HOME/.config/herbstluftwm/"
 
 
 
@@ -56,7 +57,7 @@ hc keybind $Mod-Shift-b spawn firefox -private
 hc keybind $Mod-r spawn nautilus
 hc keybind $Mod-Shift-x spawn bash ~/Documents/Scripts/screenshot.sh
 hc keybind $Mod-Control-x spawn ~/.config/herbstluftwm/0x0 direct
-hc keybind $Mod-x spawn ~/.config/herbstluftwm/0x0 bloat
+hc keybind $Mod-x spawn bash $HOME/Documents/Scripts/screenshot.sh
 hc keybind $Mod-Control-c spawn ~/.config/herbstluftwm/0x0 text
 hc keybind $Mod-u spawn ~/.config/herbstluftwm/0x0 recorda
 hc keybind $Mod-Shift-t spawn ~/Documents/Projects/Theatron/scripts/simplewatch
@@ -74,8 +75,6 @@ hc keybind $Mod-Shift-m spawn bash "$HOME/.config/herbstluftwm/toggle_single_flo
 hc keybind $Mod-Shift-cedilla move_index cedilla
 hc keybind $Mod-Shift-p texToPDF
 hc keybind $Mod-Shift-e spawn emacsclient -ca "" &
-hc keybind $Mod-Shift-g spawn giph -l -c 0.3,0,0.5,0.3 -s "$HOME/Videos/Giph/$(date +%Y-%M-%dZ%hh:%mm)" && notify-send "Done saving"
-hc keybind $Mod-Control-g spawn killall -INT -g giph
 hc keybind $Mod-o spawn bash "$HOME/.config/herbstluftwm/pulsesink.sh"
 hc keybind $Mod-Shift-o spawn bash "$HOME/.config/herbstluftwm/pulsesink.sh" mute
 # basic movement
@@ -109,7 +108,6 @@ chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 
 
 
-echo "Done with keybinds"
 
 
 
@@ -161,7 +159,6 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 
 
 
-echo "Setting up tags"
 
 
 
@@ -213,7 +210,6 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 
 
 
-echo "Done with tags"
 
 
 
@@ -347,6 +343,7 @@ hc rule focus=on # normally focus new clients
 #hc rule class="mpv" tag=0
 hc rule class="discord" tag=4
 hc rule class="spotify" tag=4
+hc rule class="xclipboard" tag=12
 # ---------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -368,10 +365,10 @@ hc rule class="spotify" tag=4
 
 
 hc spawn bash monitorsetup
-hc focus_crosses_monitor_boundaries 1
+hc set focus_crosses_monitor_boundaries 1
 hc set smart_frame_surroundings 1
 hc set smart_window_surroundings 1
-hc focus_follows_mouse 1
+hc set focus_follows_mouse 1
 hc detect_monitors
 # unlock, just to be sure
 hc unlock
@@ -503,6 +500,7 @@ if hc silent new_attr bool my_not_first_autostart ; then
     hc spawn xset l 1 1 &
     hc spawn discord &
     hc spawn spotify &
+    hc spawn xclipboard &
 fi
 
 #-----------------------------------

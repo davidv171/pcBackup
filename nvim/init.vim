@@ -1,3 +1,4 @@
+let mapleader = " "
 set incsearch " search as characters are entered
 set autoread
 let python_host_prog  ="/usr/bin/python2.7"
@@ -130,6 +131,8 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     Plug 'fneu/breezy'
+
+    Plug 'joshdick/onedark.vim'
 
     Plug 'itchyny/lightline.vim'
 
@@ -270,8 +273,8 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+"nmap <silent> <TAB> <Plug>(coc-range-select)
+"xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -309,12 +312,12 @@ autocmd FileType json,go syntax match Comment +\/\/.\+$+
 " E shit
 "
 set background=light
-colorscheme breezy
+colorscheme onedark
 
 
 let g:lightline = {
-      \ 'colorscheme': 'breezy',
-      \ }
+      \ 'colorscheme': 'onedark',
+\ }
 
 
 
@@ -327,20 +330,27 @@ let g:terminal_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 
-inoremap <C-d> <Plug>(coc-definition)
-inoremap <C-u> <Plug>(coc-references)
-inoremap <C-i> <Plug>(coc-implementation)
 nnoremap <leader>r <Plug>(coc-rename)
 nnoremap <leader>rn <Plug>(coc-rename)
-nnoremap <leadern>t :Tags<CR>
+nnoremap <leader>t :Tags<CR>
 
 nnoremap <leader>gi :!goimports -w %<CR>
 
 map <C-a> <esc>ggVG<CR>
 inoremap <C-s> :w<CR>
-set autoread
 
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gcr <Plug>(coc-references)
+nmap <silent> <leader>td <Plug>(coc-type-definition)
+nmap <silent> <leader>i <Plug>(coc-implementation)
+nmap <silent> <leader>r <Plug>(coc-references)
+nmap <silent> <leader>u <Plug>(coc-references)
+
+nmap <silent> <leader>fw :w!<CR>
+nmap <silent> <leader>, A;
+nmap <silent> <leader>fq :q!<CR>
+nmap <silent> <leader>cd :cd /home/davidv7/
+nmap <silent> <leader>fb :Files<CR>
+nmap <leader>tt :!setxkbmap -option caps:escape<CR>
+nmap <leader>ll :!ls %:p<CR>
+nmap <leader>m :Marks<CR>
+
 

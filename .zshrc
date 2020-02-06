@@ -39,4 +39,12 @@ alias mn="cd ~/Documents/Projects/Mag/notes"
 alias caps="setxkbmap -option caps:escape"
 alias g="cd ~/go/src/github.com/davidv171/"
 
+alias deezer="chromium --app=https://www.deezer.com"
+
 PATH=$PATH:~/go/bin/
+
+function nv {
+    nvim $(fzf)
+}
+
+#vim:ft=sh
