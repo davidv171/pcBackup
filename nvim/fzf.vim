@@ -39,7 +39,8 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 map <C-f> :Files<CR>
 map <C-b> :Buffers<CR>
+map <C-m> :Marks<CR>
 
 
-
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.3 } }
+let g:fzf_tags_command = 'ctags -R'

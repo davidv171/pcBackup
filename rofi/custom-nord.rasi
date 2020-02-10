@@ -6,8 +6,8 @@
     separatorcolor: #5699AF;
     scrollbarcolor: #5699AF;
     foregroundcolor: #bbc2cf;
-    foregroundcolorinverse: #2d2d2d;
-    selectioncolor: #5699AF;
+    foregroundcolorinverse: #4271ae;
+    selectioncolor: #d9ddd9;
 
     font-size: 1px;
     border-color: @separatorcolor;

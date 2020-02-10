@@ -1,5 +1,4 @@
-
-let mapleader = " "
+let mapleader = ","
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 set termguicolors
 
@@ -13,12 +12,7 @@ set autoread
 let python_host_prog  ="/usr/bin/python2.7"
 let python3_host_prog  ="/usr/bin/python3"
 set hlsearch  " highlight matches
-set showmatch           " Show matching brackets.
-set number              " Show the line numbers on the left side.
-set ruler
-set formatoptions+=o    " Continue comment marker in new lines.
-set shiftwidth=4        " Indentation amount for < and > commands.
-set autoindent
+set showmatch           " Show matching brackets. set number              " Show the line numbers on the left side. set ruler set formatoptions+=o    " Continue comment marker in new lines. set shiftwidth=4        " Indentation amount for < and > commands. set autoindent
 set smartindent
 set cindent
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
@@ -64,7 +58,6 @@ set backspace=indent,eol,start
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 
-set autochdir
 
 
 
@@ -102,5 +95,7 @@ let g:go_auto_type_info = 1
 let g:terminal_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 
+":setlocal foldmethod=syntax
+let g:mkdp_auto_start = 0
 
-
+"autocmd FileType go :TagbarToggle

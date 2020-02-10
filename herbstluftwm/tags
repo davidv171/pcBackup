@@ -1,106 +1,54 @@
-#!/bin/bash
-
-# ---------------------------------------------------------------------------------------------------------------------------------------
-# tags
-hc() {
-    herbstclient "$@"
-}
-Mod=Mod4
-tag_names=( {1..9} 0 cedilla a s d )
-tag_keys=( {1..9} 0 cedilla a s d )
-
-hc rename default "${tag_names[0]}" || true
-for i in ${!tag_names[@]} ; do
-    hc add "${tag_names[$i]}"
-    key="${tag_keys[$i]}"
-    if ! [ -z "$key" ] ; then
-        hc keybind "$Mod-$key" use_index "$i"
-        hc keybind "$Mod-Shift-$key" move_index "$i"
-    fi
-done
-hc add 0
-hc add 11
-#Our throwaway workspace
-hc add 12
-hc add 13
-hc keybind $Mod-0 use 0
-hc keybind cedilla use cedilla
-hc keybind $Mod-s use s
-hc keybind $Mod-Shift-s move s
-hc keybind $Mod-d use d
-hc keybind $Mod-Shift-d move d
-hc keybind $Mod-a use a
-hc keybind $Mod-Shift-a move a
-hc keybind $Mod-e move 12
-hc keybind $Mod-greater use 13
-hc keybind $Mod-Shift-greater move 13
-
-# Replace the default section for tags in your autostart by the following:
-# This is the default tag section of the autostart, with a single change:
-# In the use_index keybinding, check the presence of the my_monitor attribute,
-# before focusing the desired tag.
-
-hc rename default "${tag_names[0]}" || true
-for i in ${!tag_names[@]} ; do
-    hc add "${tag_names[$i]}"
-    key="${tag_keys[$i]}"
-    if ! [ -z "$key" ] ; then
-        # first check if the tag is locked to some monitor.
-        # if so, first focus the monitor
-        hc keybind "$Mod-$key" \
-            chain , silent substitute M tags."$i".my_monitor \
-                        focus_monitor M \
-                  , use_index "$i"
-        hc keybind "$Mod-Shift-$key" move_index "$i"
-    fi
-done
-# Add a keybinding for locking the current tag to the monitor it is displayed
-# on. This is done by safing the current monitor index in the my_monitor
-# attribute of the focused tag. If the monitor has a (nonempty) name, use the
-# monitor name instead of its index.
-herbstclient keybind $Mod-t chain \
-    , new_attr string tags.focus.my_monitor \
-    , substitute M monitors.focus.index set_attr tags.focus.my_monitor M \
-    , try and \
-        . compare monitors.focus.name != "" \
-        . substitute M monitors.focus.name \
-                set_attr tags.focus.my_monitor M
-
-# Add a keybinding for removing the lock
-herbstclient keybind $Mod-Shift-n \
-    remove_attr tags.focus.my_monitor
-
-# Statically define which tag should be send to which monitor
-lock_tag_to_monitor() {
-    herbstclient chain \
-        , new_attr string tags.by-name."$1".my_monitor \
-        , set_attr tags.by-name."$1".my_monitor "$2"
-}
-# Already lock some of the tags to a monitor, for example:
-# lock the second tag to the monitor with index 0
-# Stream tag
-# Throwaway workspace
-
-lock_tag_to_monitor 2 2
-lock_tag_to_monitor 1 0
-lock_tag_to_monitor 3 0
-lock_tag_to_monitor 4 0
-lock_tag_to_monitor 5 0
-lock_tag_to_monitor 6 0
-lock_tag_to_monitor 7 2
-lock_tag_to_monitor 8 0
-lock_tag_to_monitor 9 1
-lock_tag_to_monitor 0 1
-lock_tag_to_monitor 11 0
-lock_tag_to_monitor 12 0
-lock_tag_to_monitor 13 0
-lock_tag_to_monitor cedilla 1
-lock_tag_to_monitor s 0
-lock_tag_to_monitor d 2
-lock_tag_to_monitor a 0
-if [[ $(hc getenv place) == "work" ]];then
-    lock_tag_to_monitor 7 1
-    lock_tag_to_monitor 2 0
-    lock_tag_to_monitor s 0
-    lock_tag_to_monitor d 1
-fi
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	Development	//
+animate	dropdown	/^animate() {$/;"	f
+auto	swap	/^auto() { ### swap out of the current frame into the other.$/;"	f
+cleanup_networks	nmcli-rofi	/^function cleanup_networks () {$/;"	f
+close	swap	/^close() { ### replace master client on close. removes stack if empty.$/;"	f
+count_lines	nmcli-rofi	/^function count_lines () {$/;"	f
+current_connection	nmcli-rofi	/^function current_connection () {$/;"	f
+float_off	toggle_single_float.sh	/^float_off() {$/;"	f
+float_on	toggle_single_float.sh	/^float_on() {$/;"	f
+fun	center	/^fun() {$/;"	f
+get_ssid	nmcli-rofi	/^function get_ssid () {$/;"	f
+hc	autostart	/^hc() {$/;"	f
+hc	dialogs	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hc	dropdown	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hc	scratchpad	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hc	swap	/^hc() { herbstclient $@;}; chn() { cmds="$cmds , $@";}$/;"	f
+hc	toggle_single_float.sh	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hide	dialogs	/^hide() {$/;"	f
+hide	dropdown	/^hide() {$/;"	f
+hide	scratchpad	/^hide() {$/;"	f
+if_wifistate	nmcli-rofi	/^function if_wifistate () {$/;"	f
+isrunning	0x0	/^	isrunning() {$/;"	f
+linenum	nmcli-rofi	/^function linenum () {$/;"	f
+list_sinks	pulsesink.sh	/^list_sinks() {$/;"	f
+lock_tag_to_monitor	autostart	/^lock_tag_to_monitor() {$/;"	f
+main	nmcli-rofi	/^function main () {$/;"	f
+master_spawn	swap	/^master_spawn() { ### spawn applications in the master.$/;"	f
+menu	nmcli-rofi	/^function menu () {$/;"	f
+move_and_change_sink	pulsesink.sh	/^move_and_change_sink(){$/;"	f
+move_sink_inputs	pulsesink.sh	/^move_sink_inputs() {$/;"	f
+mute_sink	pulsesink.sh	/^mute_sink() {$/;"	f
+nmcli_list	nmcli-rofi	/^function nmcli_list () {$/;"	f
+rofi_cmd	nmcli-rofi	/^function rofi_cmd () {$/;"	f
+rofi_menu	nmcli-rofi	/^function rofi_menu () {$/;"	f
+rwidth	nmcli-rofi	/^function rwidth () {$/;"	f
+select_sink	pulsesink.sh	/^select_sink() {$/;"	f
+set_vars	swap	/^set_vars() { ### some vars need to be set more than once.$/;"	f
+show	dialogs	/^show() {$/;"	f
+show	dropdown	/^show() {$/;"	f
+show	scratchpad	/^show() {$/;"	f
+stack_spawn	swap	/^stack_spawn() { ### spawn applications in the stack.$/;"	f
+testconn	wifi-connect.lua	/^function testconn()$/;"	f
+toggle_wifi	nmcli-rofi	/^function toggle_wifi () {$/;"	f
+transform_output	pulsesink.sh	/^transform_output(){$/;"	f
+transform_output_short	pulsesink.sh	/^transform_output_short(){$/;"	f
+update_geom	dropdown	/^update_geom() {$/;"	f
+wifiactive	nmcli-rofi	/^function wifiactive () {$/;"	f
+wificonn 	wifi-connect.lua	/^function wificonn (uuid)$/;"	f
+wifistate	nmcli-rofi	/^function wifistate () {$/;"	f
