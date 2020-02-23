@@ -1,10 +1,12 @@
 
 " E shit
 "
+"
+let g:rainbow_active = 1
 set background=light
-colorscheme onedark
+colorscheme nord
 
 
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'nord',
 \ }

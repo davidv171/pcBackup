@@ -1,5 +1,5 @@
 #!/bin/bash
-root="$HOME/Documents/dots/"
+root="/home/davidv7/Documents/dots/"
 cd "$HOME" || exit 1
 cp -R "$HOME/.config/herbstluftwm/" "$root"
 cp -R "$HOME/.config/dunst/" "$root"
@@ -18,3 +18,4 @@ cp -R "$HOME/.config/books.md" "$root"
 # DOOM EMACS
 cp -R "$HOME/.doom.d" "$root"
 cp -R "$HOME/.emacs.d" "$root"
+cp -R "$HOME/.tmux.conf" "$root"

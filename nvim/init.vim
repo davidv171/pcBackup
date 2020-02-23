@@ -13,27 +13,29 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     "Plug 'fneu/breezy'
-
-    Plug 'joshdick/onedark.vim'
-
+    "Plug 'joshdick/onedark.vim'
+    Plug 'arcticicestudio/nord-vim'
     Plug 'itchyny/lightline.vim'
 
     Plug 'kshenoy/vim-signature'
     "Plug 'majutsushi/tagbar'
 
-    Plug 'vim-syntastic/syntastic'
+    "Plug 'vim-syntastic/syntastic'
     "Plug 'yggdroot/indentline'
+    Plug 'frazrepo/vim-rainbow'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
     Plug 'lervag/vimtex'
 
 call plug#end()
 
+let mapleader = " "
+let maplocalleader = " "
 
+source $HOME/.config/nvim/universal.vim
 source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/tabs.vim
 source $HOME/.config/nvim/cocdefaults.vim
-source $HOME/.config/nvim/universal.vim
 source $HOME/.config/nvim/colorscheme.vim
-source $HOME/.config/nvim/tagbar.vim
+"source $HOME/.config/nvim/tagbar.vim
 source $HOME/.config/nvim/syntastic.vim

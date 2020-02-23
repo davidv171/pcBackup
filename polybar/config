@@ -39,9 +39,9 @@ font-5 = "FontAwesome:pixelsize=10;2"
 ;--------;
 
 
-border-color = #282c34
-background = #282c34
-foreground = #bbc2cf
+border-color = #2E3440
+background = #2E3440
+foreground = #D8DEE9
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -65,7 +65,7 @@ module-margin = 1.5
 
 modules-center = title focusedw
 modules-left = date time memory
-modules-right = player-mpris volume cpu
+modules-right = updates volume cpu
 
 
 
@@ -113,10 +113,11 @@ label-visible-padding = 4
 ;ws-icon-default = 
 ;label-focused	= 
 ;label-unfocused = 
+
 [module/time]
 type = internal/date
-format-foreground = #4271ae
-format-background = #d9ddd9
+format-foreground = #81A1C1
+format-background = #E5E9F0
 format-padding = 4
 interval = 1.0
 date =  %H:%M:%S
@@ -177,10 +178,10 @@ sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 use-ui-max = true
 format-volume-padding = 4
 format-muted-padding = 4
-format-muted-background = #d9ddd9
-format-muted-foreground = #4271ae
-format-volume-background = #d9ddd9
-format-volume-foreground = #4271ae
+format-muted-background = #E5E9F0
+format-muted-foreground = #81A1C1
+format-volume-background = #E5E9F0
+format-volume-foreground = #81A1C1
 ; Available tags:
 ;   <label-volume> (default)
 ;   <ramp-volume>

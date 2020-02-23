@@ -1,0 +1,56 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	Development	//
+animate	dropdown	/^animate() {$/;"	f
+auto	swap	/^auto() { ### swap out of the current frame into the other.$/;"	f
+cleanup_networks	nmcli-rofi	/^function cleanup_networks () {$/;"	f
+close	swap	/^close() { ### replace master client on close. removes stack if empty.$/;"	f
+count_lines	nmcli-rofi	/^function count_lines () {$/;"	f
+current_connection	nmcli-rofi	/^function current_connection () {$/;"	f
+float_off	toggle_single_float.sh	/^float_off() {$/;"	f
+float_on	toggle_single_float.sh	/^float_on() {$/;"	f
+fun	center	/^fun() {$/;"	f
+get_ssid	nmcli-rofi	/^function get_ssid () {$/;"	f
+hc	autostart	/^hc() {$/;"	f
+hc	dialogs	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hc	dropdown	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hc	scratchpad	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hc	swap	/^hc() { herbstclient $@;}; chn() { cmds="$cmds , $@";}$/;"	f
+hc	tags	/^hc() {$/;"	f
+hc	toggle_single_float.sh	/^hc() { "${herbstclient_command[@]:-herbstclient}" "$@" ;}$/;"	f
+hide	dialogs	/^hide() {$/;"	f
+hide	dropdown	/^hide() {$/;"	f
+hide	scratchpad	/^hide() {$/;"	f
+if_wifistate	nmcli-rofi	/^function if_wifistate () {$/;"	f
+isrunning	0x0	/^	isrunning() {$/;"	f
+linenum	nmcli-rofi	/^function linenum () {$/;"	f
+list_sinks	pulsesink.sh	/^list_sinks() {$/;"	f
+lock_tag_to_monitor	autostart	/^lock_tag_to_monitor() {$/;"	f
+lock_tag_to_monitor	tags	/^lock_tag_to_monitor() {$/;"	f
+main	nmcli-rofi	/^function main () {$/;"	f
+master_spawn	swap	/^master_spawn() { ### spawn applications in the master.$/;"	f
+menu	nmcli-rofi	/^function menu () {$/;"	f
+move_and_change_sink	pulsesink.sh	/^move_and_change_sink(){$/;"	f
+move_sink_inputs	pulsesink.sh	/^move_sink_inputs() {$/;"	f
+mute_sink	pulsesink.sh	/^mute_sink() {$/;"	f
+nmcli_list	nmcli-rofi	/^function nmcli_list () {$/;"	f
+rofi_cmd	nmcli-rofi	/^function rofi_cmd () {$/;"	f
+rofi_menu	nmcli-rofi	/^function rofi_menu () {$/;"	f
+rwidth	nmcli-rofi	/^function rwidth () {$/;"	f
+select_sink	pulsesink.sh	/^select_sink() {$/;"	f
+set_vars	swap	/^set_vars() { ### some vars need to be set more than once.$/;"	f
+show	dialogs	/^show() {$/;"	f
+show	dropdown	/^show() {$/;"	f
+show	scratchpad	/^show() {$/;"	f
+stack_spawn	swap	/^stack_spawn() { ### spawn applications in the stack.$/;"	f
+testconn	wifi-connect.lua	/^function testconn()$/;"	f
+toggle_wifi	nmcli-rofi	/^function toggle_wifi () {$/;"	f
+transform_output	pulsesink.sh	/^transform_output(){$/;"	f
+transform_output_short	pulsesink.sh	/^transform_output_short(){$/;"	f
+update_geom	dropdown	/^update_geom() {$/;"	f
+wifiactive	nmcli-rofi	/^function wifiactive () {$/;"	f
+wificonn 	wifi-connect.lua	/^function wificonn (uuid)$/;"	f
+wifistate	nmcli-rofi	/^function wifistate () {$/;"	f

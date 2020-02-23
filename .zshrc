@@ -43,6 +43,12 @@ alias deezer="chromium --app=https://www.deezer.com"
 alias discord="chromium --app=https://discordapp.com"
 PATH=$PATH:~/go/bin/
 
+alias volume="alsamixer -q"
+alias tm='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
+
+alias yast="xdg-su -u root -c /usr/sbin/yast2"
+
+
 function nv {
     nvim $(fzf)
 }
@@ -55,4 +61,5 @@ function countdown(){
    done
 }
 
+xset r rate 180 50
 #vim:ft=sh

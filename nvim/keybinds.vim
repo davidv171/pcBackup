@@ -36,44 +36,41 @@ nmap <silent> <leader>D <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>dl <Plug>(coc-diagnostic-prev)
 
 nmap <silent> <leader>fw :w!<CR>
-nmap <silent> <leader>, A;
 nmap <silent> <leader>fq :q!<CR>
-nmap <silent> <leader>cd :cd /home/davidv7/
+nmap <leader>cd :cd /home/davidv7/<CR>
+nmap <leader>cb :cd ..<CR>
 nmap <silent> <leader>fb :Files<CR>
 nmap <leader>tt :!setxkbmap -option caps:escape<CR>
 nmap <leader>ll :!ls %:p<CR>
 
-nnoremap <leader>cc :!cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>cc :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>cf :Files %:p:h<CR>
 
 nmap <leader>m :Marks<CR>
-nmap <leader>to :TagbarToggle<CR>
-nmap <leader>ts :TagbarShowTag<CR>
+"nmap <leader>to :TagbarToggle<CR>
+"nmap <leader>ts :TagbarShowTag<CR>
+nmap <leader>, :Rg<CR>
+nmap <leader>fi :Rg<CR>
+nmap <leader>hi :History<CR>
 
-
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-" End a line with a semicolon
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> <F2> <Plug>(coc-diagnostic-prev)
+nmap <silent> <F3> <Plug>(coc-diagnostic-next)
 nnoremap ; <Esc>A;
     " 'quote' a word
-nnoremap qsw :silent! normal mpea'<Esc>bi'<Esc>`pl
 
 " double "quote" a word
-nnoremap qd :silent! normal mpea"<Esc>bi"<Esc>`pl
-
 nnoremap qw :silent! normal mpEa"<Esc>Bi"<Esc>`pl
 
 " remove quotes from a word
-nnoremap wq :silent! normal mpeld bhd `ph<CR>
+"nnoremap wq :silent! normal mpeld bhd `ph<CR>
 nnoremap ql :silent! normal mpEA"<Esc>bi"<Esc>`pl
 
 
 
-nnoremap <A-r>  :source ~/.config/nvim/init.vim<CR>
+nnoremap <A-r> :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>pp :MarkdownPreview<CR>
-nnoremap <A-n>
-
-
+nnoremap <Esc> :noh<CR>
+nnoremap <leader>rw :!chmod u+rw %<CR>
+nnoremap <leader>ts :sp<Esc><C-w>j<CR>:resize 10<Esc>:terminal<CR>
+:tnoremap <Esc> <C-\><C-n>

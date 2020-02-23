@@ -254,9 +254,9 @@ hc keybind $Mod-i jumpto urgent
 
 
 
-
-background='#282c34'
-foreground='#bbc2cf'
+#Colros
+background='#2E3440'
+foreground='#D8DEE9'
 
 # theme
 #
