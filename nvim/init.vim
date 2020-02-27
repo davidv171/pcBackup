@@ -1,3 +1,4 @@
+
 call plug#begin('~/.local/share/nvim/plugged')
 
     Plug 'airblade/vim-gitgutter'
@@ -20,11 +21,13 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'kshenoy/vim-signature'
     "Plug 'majutsushi/tagbar'
 
-    "Plug 'vim-syntastic/syntastic'
-    "Plug 'yggdroot/indentline'
+"    Plug 'vim-syntastic/syntastic'
+    Plug 'thaerkh/vim-indentguides'
     Plug 'frazrepo/vim-rainbow'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
     Plug 'lervag/vimtex'
+    Plug 'norcalli/nvim-colorizer.lua'
+
 
 call plug#end()
 
@@ -39,3 +42,7 @@ source $HOME/.config/nvim/cocdefaults.vim
 source $HOME/.config/nvim/colorscheme.vim
 "source $HOME/.config/nvim/tagbar.vim
 source $HOME/.config/nvim/syntastic.vim
+
+"lua vim.api.nvim_command [[autocmd CursorHold   * lua require'utils'.blameVirtText()]]
+"lua vim.api.nvim_command [[autocmd CursorMoved  * lua require'utils'.clearBlameVirtText()]]
+"lua vim.api.nvim_command [[autocmd CursorMovedI * lua require'utils'.clearBlameVirtText()]]

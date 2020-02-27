@@ -39,8 +39,31 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 map <C-f> :Files<CR>
 map <leader>b :Buffers<CR>
-map <C-m> :Marks<CR>
+nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>ta :Tags<CR>
+nnoremap <leader>m :Marks<CR>
 
 
-let g:fzf_layout = { 'window': { 'width': 0.6, 'height': 0.3 } }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6 } }
 let g:fzf_tags_command = 'ctags -R'
+" Border color
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo' } }
+
+" Border style (rounded / sharp / horizontal)
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'border': 'sharp' } }
+
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+
+"Get previews
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+
+
+" Rg previews
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+

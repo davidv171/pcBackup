@@ -27,5 +27,14 @@
         }
       }
     }
+  },
+  "suggest":{
+	"enablePreview": true,
+	"fixInsertedWord":false,
+	"triggerAfterInsertEnter":true
+  },
+  "diagnostic":{
+	"checkCurrentLine": true,
+	"refreshOnInsertMode":true
   }
 }

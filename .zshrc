@@ -47,6 +47,10 @@ alias volume="alsamixer -q"
 alias tm='tmux attach || { (while ! tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh; do sleep 0.2; done)& tmux ; }'
 
 alias yast="xdg-su -u root -c /usr/sbin/yast2"
+alias ncon="nvim $HOME/.config/nvim/init.vim"
+alias pcon="nvim $HOME/.config/polybar/config"
+alias hcon="nvim $HOME/.config/herbstluftwm/autostart"
+alias p="cd $HOME/Documents/Projects"
 
 
 function nv {
@@ -62,4 +66,5 @@ function countdown(){
 }
 
 xset r rate 180 50
+#
 #vim:ft=sh

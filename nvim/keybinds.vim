@@ -8,18 +8,15 @@ xnoremap <silent> ( <ESC>:let p = &paste<CR>:set paste<CR>:let a = line2byte(lin
 nmap <silent> gd <Plug>(coc-definition)
 
 nnoremap <leader>rn <Plug>(coc-rename)
-nnoremap <leader>ta :Tags<CR>
 
 nnoremap <leader>gi :!goimports -w %<CR>
-
-map <C-a> <esc>ggVG<CR>
-inoremap <C-s> :w<CR>
-
+map <C-a> <esc>ggVG<CR> inoremap <C-s> :w<CR>
 nmap <silent> <leader>td <Plug>(coc-type-definition)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>r <Plug>(coc-references)
+":call CreateCenteredFloatingWindow("<bslash><lt>Plug>(coc-references)")<CR>
 nmap <silent> <leader>u <Plug>(coc-references)
 
 nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
@@ -45,8 +42,9 @@ nmap <leader>ll :!ls %:p<CR>
 
 nnoremap <leader>cc :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>cf :Files %:p:h<CR>
+nnoremap <leader>ch :Files /home/davidv7/<CR>
+nnoremap <leader>cv :Files /home/davidv7/.config/<CR>
 
-nmap <leader>m :Marks<CR>
 "nmap <leader>to :TagbarToggle<CR>
 "nmap <leader>ts :TagbarShowTag<CR>
 nmap <leader>, :Rg<CR>
@@ -57,7 +55,7 @@ nmap <leader>hi :History<CR>
 nmap <silent> <F2> <Plug>(coc-diagnostic-prev)
 nmap <silent> <F3> <Plug>(coc-diagnostic-next)
 nnoremap ; <Esc>A;
-    " 'quote' a word
+  " 'quote' a word
 
 " double "quote" a word
 nnoremap qw :silent! normal mpEa"<Esc>Bi"<Esc>`pl
@@ -73,4 +71,21 @@ nnoremap <leader>pp :MarkdownPreview<CR>
 nnoremap <Esc> :noh<CR>
 nnoremap <leader>rw :!chmod u+rw %<CR>
 nnoremap <leader>ts :sp<Esc><C-w>j<CR>:resize 10<Esc>:terminal<CR>
-:tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+
+
+
+augroup customize_floating_windows
+    au!
+    au BufNew * au OptionSet buftype ++once if has_key(nvim_win_get_config(0), 'anchor')
+    \ | exe 'nno <buffer><nowait><silent> <esc> :<c-u>q!<cr>'
+    \ | endif
+augroup END
+
+nnoremap % v%
+nnoremap š :tabnew %:p
+nnoremap đ [[
+nnoremap ž {{
+nnoremap ć }}
+
+nnoremap <leader>tb :tab sball<CR>
