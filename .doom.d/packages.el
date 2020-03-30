@@ -1,21 +1,26 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; This is where you install packages, by declaring them with the `package!'
-;; macro, then running 'doom refresh' on the command line. You'll need to
-;; restart Emacs for your changes to take effect! Or at least, run M-x
-;; `doom/reload'.
+;; To install a package with Doom you must declare them here, run 'doom sync' on
+;; the command line, then restart Emacs for the changes to take effect.
+;; Alternatively, use M-x doom/reload.
 ;;
-;; WARNING: Don't disable core packages listed in ~/.emacs.d/core/packages.el.
-;; Doom requires these, and disabling them may have terrible side effects.
-;;
-;; Here are a couple examples:
+;; WARNING: Disabling core packages listed in ~/.emacs.d/core/packages.el may
+;; have nasty side-effects and is not recommended.
+
+
+;; All of Doom's packages are pinned to a specific commit, and updated from
+;; release to release. To un-pin all packages and live on the edge, do:
+;(unpin! t)
+
+;; ...but to unpin a single package:
+;(unpin! pinned-package)
+;; Use it to unpin multiple packages
+;(unpin! pinned-package another-pinned-package)
+
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
-
-
-(package! company-tabnine)
 
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:

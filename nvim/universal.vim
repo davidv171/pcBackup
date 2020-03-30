@@ -1,9 +1,11 @@
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype * setlocal tabstop=4 shiftwidth=4 softtabstop=4
 set termguicolors
 
 set splitbelow
 set splitright
-syntax on "Universal settings since the first day i got vim set incsearch " search as characters are entered
+syntax on "Universal settings since the first day i got vim
+
+set incsearch " search as characters are entered
 set autoread
 let python_host_prog  ="/usr/bin/python2.7"
 let python3_host_prog  ="/usr/bin/python3"
@@ -85,24 +87,72 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " https://gist.github.com/LinArcX/0aba3e0d5876a0e2f856c0bb92c77573
 "-------------------------------------------------------"
-function! CreateCenteredFloatingWindow(command)
-    let width = min([&columns - 4, max([80, &columns - 20])])
-    let height = min([&lines - 4, max([20, &lines - 10])])
-    let top = ((&lines - height) / 2) - 1
-    let left = (&columns - width) / 2
-    let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-    set winhl=Normal:Floating
-    let opts.row += 1
-    let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
-    execute "normal mq"
-    execute nvim_open_win(0,v:true, opts)
-    execute "normal `q"
-    execute "normal " . a:command
-endfunction
+  function! CreateCenteredFloatingWindow() abort
+      let width = float2nr(&columns * 0.6)
+      let height = float2nr(&lines * 0.6)
+      let top = ((&lines - height) / 2) - 1
+      let left = (&columns - width) / 2
+      let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
+
+      set winhl=Normal:Floating
+      let opts.row += 1
+      let opts.height -= 2
+      let opts.col += 2
+      let opts.width -= 4
+      call nvim_open_win(0, v:true, opts)
+      au BufWipeout <buffer> exe 'bw '.s:buf
+  endfunction
 
 let g:ft_man_open_mode = 'vert'
 
-vmap <leader>p  <Plug>(coc-format-selected)
-"suggest.enablePreview":~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function! FloatScroll(forward) abort
+  let float = coc#util#get_float()
+  if !float | return '' | endif
+  let buf = nvim_win_get_buf(float)
+  let buf_height = nvim_buf_line_count(buf)
+  let win_height = nvim_win_get_height(float)
+  if buf_height < win_height | return '' | endif
+  let pos = nvim_win_get_cursor(float)
+  if a:forward
+    if pos[0] == 1
+      let pos[0] += 3 * win_height / 4
+    elseif pos[0] + win_height / 2 + 1 < buf_height
+      let pos[0] += win_height / 2 + 1
+    else
+      let pos[0] = buf_height
+    endif
+  else
+    if pos[0] == buf_height
+      let pos[0] -= 3 * win_height / 4
+    elseif pos[0] - win_height / 2 + 1  > 1
+      let pos[0] -= win_height / 2 + 1
+    else
+      let pos[0] = 1
+    endif
+  endif
+    call nvim_win_set_cursor(float, pos)
+return ''
+endfunction
+
+inoremap <silent><expr> <down> coc#util#has_float() ? FloatScroll(1) : "\<down>"
+inoremap <silent><expr>  <up>  coc#util#has_float() ? FloatScroll(0) :  "\<up>"
+
+
+
+
+
+

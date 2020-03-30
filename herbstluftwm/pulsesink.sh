@@ -61,6 +61,7 @@ transSink=$(echo "$sink" |\
     do
 	if [[ ${sinksTransArr[$i]} == "$choice" ]] ; then
 	    pactl set-default-sink "${sinksArr[$i]}"
+		pacmd set-default-sink "${sinksArr[i]}"
 	    move_sink_inputs "${sinksArr[$i]}"
 	fi
     done

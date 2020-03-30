@@ -1,12 +1,13 @@
 {
   "languageserver": {
     "golang": {
-      "command": "gopls",
+      "command": /home/davidv7/go/bin/"gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"],
       "initializationOptions": {
         "usePlaceholders": true
       }
+
     },
     "bash": {
       "command": "bash-language-server",
@@ -30,7 +31,7 @@
   },
   "suggest":{
 	"enablePreview": true,
-	"fixInsertedWord":false,
+	"fixInsertedWord":true,
 	"triggerAfterInsertEnter":true
   },
   "diagnostic":{
