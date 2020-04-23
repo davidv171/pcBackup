@@ -49,6 +49,11 @@ alias hcon="nvim $HOME/.config/herbstluftwm/autostart"
 alias p="cd $HOME/Documents/Projects"
 alias gut="git"
 
+
+function fcd {
+	cd "$(dirname $(fzf))"
+}
+
 function xc {
 	xclip -selection clipboard -i $@
 }

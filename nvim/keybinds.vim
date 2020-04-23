@@ -136,3 +136,5 @@ vmap <leader>p <Plug>(coc-format-selected)
 nnoremap <leader>qa :qa!<CR>
 
 nnoremap <leader>gb :ToggleBlameLine
+nnoremap <leader>cal :pu=strftime('%c')
+

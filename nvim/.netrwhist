@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/davidv7/Documents/Scripts'
+let g:netrw_dirhist_2='/home/davidv7'
 let g:netrw_dirhist_1='/home/davidv7/Documents/Scripts'
 let g:netrw_dirhist_0='/home/davidv7/Documents/Projects/Theatron/scripts'
 let g:netrw_dirhist_9='/home/davidv7/go/src/github.com/davidv171/release-subscriber'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_7='/home/davidv7/go/src/github.com/davidv171/release-subscri
 let g:netrw_dirhist_6='/home/davidv7/go/src/github.com/davidv171'
 let g:netrw_dirhist_5='/home/davidv7/go/src/github.com'
 let g:netrw_dirhist_4='/home/davidv7/go/src'
-let g:netrw_dirhist_3='/home/davidv7/go'
-let g:netrw_dirhist_2='/home/davidv7/Documents/Scripts'
