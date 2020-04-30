@@ -30,9 +30,10 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'norcalli/nvim-colorizer.lua'
 "    Plug 'aurieh/discord.nvim', { 'do': ':UpdateRemotePlugins'}
 "
-	Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 	Plug 'tmsvg/pear-tree'
 	Plug 'tveskag/nvim-blame-line'
+	Plug 'bagrat/vim-buffet'
 call plug#end()
 
 

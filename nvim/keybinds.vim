@@ -9,7 +9,7 @@ nmap <silent> gd <Plug>(coc-definition)
 inoremap <silent> <C-b> <Plug>(coc-definition)
 nnoremap <leader>rn <Plug>(coc-rename)
 nnoremap <leader>gi :!goimports -w %<CR>
-map <C-a> <esc>ggVG<CR>
+"map <C-a> <esc>ggVG<CR>
 inoremap <C-s> :w<CR>
 nmap <silent> <leader>td <Plug>(coc-type-definition)
 nmap <silent> <leader>i <Plug>(coc-implementation)
@@ -62,7 +62,7 @@ nnoremap ; <Esc>A;
 nnoremap <leader>qw :silent! normal Ea"<Esc>Bi"
 
 " Parenthesize word around it
-nnoremap <leader>pa :silent! normal Ea)<ESc>Bi( " unsurround word, works on anything on left and right side of Word
+nnoremap <leader>sp :silent! normal Ea)<ESc>Bi( " unsurround word, works on anything on left and right side of Word
 nnoremap <leader>us normal EdlBdh
 nnoremap , `
 " remove quotes from a word
@@ -72,7 +72,7 @@ nnoremap ql :silent! normal mpEA"<Esc>bi"<Esc>`pl
 
 
 nnoremap <A-r> :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>pp :MarkdownPreview<CR>
+"nnoremap <A-p> :MarkdownPreview<CR>
 nnoremap <Esc> :noh<CR>
 nnoremap <leader>rw :!chmod u+rw %<CR>
 nnoremap <leader>ts :sp<Esc><C-w>j<CR>:resize 10<Esc>:terminal<CR>
@@ -135,6 +135,29 @@ nnoremap <leader>ft :call ToggleTerminal()<CR>
 vmap <leader>p <Plug>(coc-format-selected)
 nnoremap <leader>qa :qa!<CR>
 
-nnoremap <leader>gb :ToggleBlameLine
-nnoremap <leader>cal :pu=strftime('%c')
+nnoremap <leader>gb :ToggleBlameLine<CR>
+nnoremap <leader>cal :pu=strftime('%c')<CR>
+
+" Switch to buffers
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
+
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>p :bp<CR>
+
+
+nnoremap H :bp<CR>
+nnoremap L :bn<CR>
+nnoremap <Leader>K :bd<CR>
+
+
+
 

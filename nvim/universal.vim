@@ -154,5 +154,3 @@ inoremap <silent><expr>  <up>  coc#util#has_float() ? FloatScroll(0) :  "\<up>"
 
 
 
-
-
