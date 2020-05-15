@@ -104,6 +104,7 @@ alias td="tmux new -s dropdown"
 alias attd="tmux attach -t dropdown"
 alias wt="tmux new -s work"
 alias attw="tmux attach -t work"
+alias ls="ls --color"
 
 
 # .zshrc
@@ -113,4 +114,7 @@ fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+# EDITOR
+export VISUAL=nvim
+export EDITOR="$VISUAL"
 
