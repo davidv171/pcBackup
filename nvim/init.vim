@@ -1,7 +1,7 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'airblade/vim-gitgutter'
+    Plug 'airblade/vim-gitgutter'
 
 "Plug 'zxqfl/tabnine-vim'
 
@@ -14,7 +14,7 @@ Plug 'airblade/vim-gitgutter'
 
     Plug 'arcticicestudio/nord-vim'
     Plug 'itchyny/lightline.vim'
-    Plug 'taohexxx/lightline-buffer'
+    "Plug 'taohexxx/lightline-buffer'
     Plug 'kshenoy/vim-signature'
     "Plug 'majutsushi/tagbar'
 
@@ -40,32 +40,36 @@ set hidden  " allow buffer switching without saving
 set showtabline=2  " always show tabline
 
 " use lightline-buffer in lightline
+"let g:lightline = {
+"    \'colorscheme':'nord',
+"    \ 'tabline': {
+"    \   'left': [ [ 'bufferinfo' ],
+"    \             [ 'separator' ],
+"    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+"    \   'right': [ [ 'close' ], ],
+"    \ },
+"    \ 'component_expand': {
+"    \   'buffercurrent': 'lightline#buffer#buffercurrent',
+"    \   'bufferbefore': 'lightline#buffer#bufferbefore',
+"    \   'bufferafter': 'lightline#buffer#bufferafter',
+"    \ },
+"    \ 'component_type': {
+"    \   'buffercurrent': 'tabsel',
+"    \   'bufferbefore': 'raw',
+"    \   'bufferafter': 'raw',
+"    \ },
+"    \ 'component_function': {
+"    \   'bufferinfo': 'lightline#buffer#bufferinfo',
+"    \ },
+"    \ 'component': {
+"    \   'separator': '',
+"    \ },
+"    \ }
+
+
 let g:lightline = {
     \'colorscheme':'nord',
-    \ 'tabline': {
-    \   'left': [ [ 'bufferinfo' ],
-    \             [ 'separator' ],
-    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-    \   'right': [ [ 'close' ], ],
-    \ },
-    \ 'component_expand': {
-    \   'buffercurrent': 'lightline#buffer#buffercurrent',
-    \   'bufferbefore': 'lightline#buffer#bufferbefore',
-    \   'bufferafter': 'lightline#buffer#bufferafter',
-    \ },
-    \ 'component_type': {
-    \   'buffercurrent': 'tabsel',
-    \   'bufferbefore': 'raw',
-    \   'bufferafter': 'raw',
-    \ },
-    \ 'component_function': {
-    \   'bufferinfo': 'lightline#buffer#bufferinfo',
-    \ },
-    \ 'component': {
-    \   'separator': '',
-    \ },
-    \ }
-
+\ }
 " remap arrow keys
 nnoremap H :bprev<CR>
 nnoremap L :bnext<CR>
@@ -189,6 +193,7 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 
 " Keybinds
+inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:terminal_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
@@ -288,6 +293,7 @@ nnoremap J <C-W>j
 nmap <silent> gd <Plug>(coc-definition)
 inoremap <silent> <C-b> <Plug>(coc-definition)
 nnoremap <leader>rn <Plug>(coc-rename)
+nnoremap <Leader>grn <Plug>(coc-rename)
 nnoremap <leader>gi :!goimports -w %<CR>
 "map <C-a> <esc>ggVG<CR>
 inoremap <C-s> :w<CR>
@@ -415,7 +421,7 @@ nnoremap <leader>ft :call ToggleTerminal()<CR>
 vmap <leader>p <Plug>(coc-format-selected)
 nnoremap <leader>qa :qa!<CR>
 
-nnoremap <leader>gb :ToggleBlameLine<CR>
+"nnoremap <leader>gb :ToggleBlameLine<CR>
 nnoremap <leader>cal :pu=strftime('%c')<CR>
 
 nnoremap <Leader>n :bn<CR>
@@ -429,7 +435,6 @@ nnoremap <Leader>K :bd<CR>
 
 
 
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 "lua vim.api.nvim_command [[autocmd CursorHold   * lua require'utils'.blameVirtText()]]
 "lua vim.api.nvim_command [[autocmd CursorMoved  * lua require'utils'.clearBlameVirtText()]]
 "lua vim.api.nvim_command [[autocmd CursorMovedI * lua require'utils'.clearBlameVirtText()]]
@@ -471,16 +476,17 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 
 map <C-f> :Files<CR>
-map <leader>b :Buffers<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>ta :Tags<CR>
 nnoremap <leader>m :Marks<CR>
-nnoremap <Leader>bl :BLines<CR>
-nnoremap <Leader>l :Lines<CR>
+nnoremap <Leader>fb :BLines<CR>
+nnoremap <Leader>fl :Lines<CR>
 nnoremap <A-x> :Commands<CR>
 
 
 let g:fzf_tags_command = 'ctags -R'
+autocmd FileType go :let g:fzf_tag_command = 'gotags -R'
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.6, 'height': 0.4,'yoffset':0.0,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
@@ -570,16 +576,6 @@ autocmd FileType bash,sh :SyntasticCheck<CR>
 " Buffer line binds
 "
 " o
-nmap <leader>1 :b1<CR>
-nmap <leader>2 :b2<CR>
-nmap <leader>3 :b3<CR>
-nmap <leader>4 :b4<CR>
-nmap <leader>5 :b5<CR>
-nmap <leader>6 :b6<CR>
-nmap <leader>7 :b7<CR>
-nmap <leader>8 :b8<CR>
-nmap <leader>9 :b9<CR>
-nmap <leader>0 :b0<CR>
 
 
 
@@ -593,3 +589,45 @@ nmap <leader>0 :b0<CR>
 let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
+
+
+
+" Gamer moment stuff
+"
+" Excited soy screeching noises
+"vnoremap + v_g_CTRL-A
+"
+noremap + <C-a>
+vnoremap + g<C-a>
+
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+nnoremap H gT
+nnoremap L gt
+
+noremap  <C-l> <C-w>l<CR>
+nnoremap <C-h> <C-w>h<CR>
+nnoremap <C-j> <C-w>j<CR>
+nnoremap <C-k> <C-w>k<CR>
+set autochdir
+
+nnoremap <Leader>k :bd<CR>
+" Go to last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-TAB> :exe "tabn ".g:lasttab<cr>
+
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+
+set switchbuf=useopen,usetab
