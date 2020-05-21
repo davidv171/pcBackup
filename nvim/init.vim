@@ -11,8 +11,9 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'junegunn/fzf.vim'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-    Plug 'arcticicestudio/nord-vim'
+    Plug 'NLKNguyen/papercolor-theme'
+    "Plug 'arcticicestudio/nord-vim'
+    Plug 'ayu-theme/ayu-vim'
     Plug 'itchyny/lightline.vim'
     "Plug 'taohexxx/lightline-buffer'
     Plug 'kshenoy/vim-signature'
@@ -32,88 +33,23 @@ let g:buftabline_numbers=2
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprev<CR>
 
+"set background=light
+set termguicolors " if you want to run vim in a terminal
 set background=light
-colorscheme nord
 
 " Lightline
 set hidden  " allow buffer switching without saving
 set showtabline=2  " always show tabline
-
-" use lightline-buffer in lightline
-"let g:lightline = {
-"    \'colorscheme':'nord',
-"    \ 'tabline': {
-"    \   'left': [ [ 'bufferinfo' ],
-"    \             [ 'separator' ],
-"    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-"    \   'right': [ [ 'close' ], ],
-"    \ },
-"    \ 'component_expand': {
-"    \   'buffercurrent': 'lightline#buffer#buffercurrent',
-"    \   'bufferbefore': 'lightline#buffer#bufferbefore',
-"    \   'bufferafter': 'lightline#buffer#bufferafter',
-"    \ },
-"    \ 'component_type': {
-"    \   'buffercurrent': 'tabsel',
-"    \   'bufferbefore': 'raw',
-"    \   'bufferafter': 'raw',
-"    \ },
-"    \ 'component_function': {
-"    \   'bufferinfo': 'lightline#buffer#bufferinfo',
-"    \ },
-"    \ 'component': {
-"    \   'separator': '',
-"    \ },
-"    \ }
-
-
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"colorscheme ayu
+set background=light
+colorscheme PaperColor
 let g:lightline = {
-    \'colorscheme':'nord',
+    \'colorscheme':'PaperColor',
 \ }
-" remap arrow keys
 nnoremap H :bprev<CR>
 nnoremap L :bnext<CR>
-
-" lightline-buffer ui settings
-" replace these symbols with ascii characters if your environment does not support unicode
-let g:lightline_buffer_logo = ' '
-let g:lightline_buffer_readonly_icon = ''
-let g:lightline_buffer_modified_icon = '✭'
-let g:lightline_buffer_git_icon = ' '
-let g:lightline_buffer_ellipsis_icon = '..'
-let g:lightline_buffer_expand_left_icon = '◀ '
-let g:lightline_buffer_expand_right_icon = ' ▶'
-let g:lightline_buffer_active_buffer_left_icon = ''
-let g:lightline_buffer_active_buffer_right_icon = ''
-let g:lightline_buffer_separator_icon = '  '
-
-" enable devicons, only support utf-8
-" require <https://github.com/ryanoasis/vim-devicons>
-let g:lightline_buffer_enable_devicons = 1
-
-" lightline-buffer function settings
-let g:lightline_buffer_show_bufnr = 2
-
-" :help filename-modifiers
-let g:lightline_buffer_fname_mod = ':t'
-
-" hide buffer list
-let g:lightline_buffer_excludes = ['vimfiler']
-
-" max file name length
-let g:lightline_buffer_maxflen = 30
-
-" max file extension length
-let g:lightline_buffer_maxfextlen = 3
-
-" min file name length
-let g:lightline_buffer_minflen = 16
-
-" min file extension length
-let g:lightline_buffer_minfextlen = 3
-
-" reserve length for other component (e.g. info, close)
-let g:lightline_buffer_reservelen = 20
 
 let mapleader = " "
 let maplocalleader = " "
@@ -187,7 +123,7 @@ set undodir=~/.vim/undodir
 
 
 
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
 
 " Statu line types/signatures.
 let g:go_auto_type_info = 1
@@ -230,17 +166,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
   endfunction
 
 let g:ft_man_open_mode = 'vert'
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -304,18 +229,6 @@ nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>r <Plug>(coc-references)
 nmap <silent> <leader>u <Plug>(coc-references)
 
-nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
-
-nmap <silent> <leader>dd <Plug>(coc-diagnostic-prev)
-
-
-nmap <silent> <leader>dh <Plug>(coc-diagnostic-prev)
-
-nmap <silent> <leader>dn <Plug>(coc-diagnostic-prev)
-
-nmap <silent> <leader>D <Plug>(coc-diagnostic-prev)
-
-nmap <silent> <leader>dl <Plug>(coc-diagnostic-prev)
 
 autocmd FileType go nmap <leader>gt :CocCommand go.test.generate.file<cr>
 
@@ -338,7 +251,6 @@ nmap <leader>, :Rg<CR>
 nmap <leader>fi :Rg<CR>
 nmap <leader>hi :History<CR>
 
-" Use `[g` and `]g` to navigate diagnostics
 nmap <silent> <F2> <Plug>(coc-diagnostic-prev)
 nmap <silent> <F3> <Plug>(coc-diagnostic-next)
 nnoremap ; <Esc>A;
@@ -600,7 +512,8 @@ let g:vimtex_view_general_options_latexmk = '--unique'
 noremap + <C-a>
 vnoremap + g<C-a>
 
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+" COC complains...
+"autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 nnoremap H gT
 nnoremap L gt
@@ -631,3 +544,18 @@ noremap <leader>0 :tablast<cr>
 
 
 set switchbuf=useopen,usetab
+
+
+nnoremap <leader>dt :call CocAction('jumpDefinition', 'tab drop')<CR>
+nnoremap <leader>dv :call CocAction('jumpDefinition', 'vsplit')<CR>
+
+" Reset go server................
+"
+nnoremap <leader>ff :setlocal foldmethod=syntax<CR>zR<CR>
+
+" Toggle Fold, move one line above to stay on it
+nnoremap <leader>ft zA<CR>k
+
+
+
+

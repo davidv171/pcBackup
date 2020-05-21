@@ -1,0 +1,51 @@
+[CompactMode]
+FontWeight=50
+
+[DetailsMode]
+FontWeight=50
+
+[FileDialogSize]
+Height 1440=598
+Width 2560=857
+
+[General]
+BrowseThroughArchives=true
+ConfirmClosingMultipleTabs=false
+SplitView=true
+Version=200
+ViewPropsTimestamp=2019,12,21,22,5,33
+
+[IconsMode]
+FontWeight=50
+PreviewSize=112
+
+[KPropertiesDialog]
+Height 1080=506
+Height 1440=542
+Width 1920=545
+Width 2560=448
+
+[MainWindow]
+Height 1080=667
+Height 1440=667
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAEwAAAD9fwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAmAAAD9QAAAF0BAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAGTwAAA/UAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1920=1280
+Width 2560=1280
+Window-Maximized 1080x1920=true
+Window-Maximized 1440x2560=true
+
+[Open-with settings]
+CompletionMode=1
+History=cali,mpv,calibre
+
+[PreviewSettings]
+Plugins=svgthumbnail,ffmpegthumbs,ebookthumbnail,blenderthumbnail,windowsexethumbnail,djvuthumbnail,mobithumbnail,audiothumbnail,windowsimagethumbnail,imagethumbnail,jpegthumbnail,exrthumbnail,fontthumbnail,directorythumbnail,kraorathumbnail,gsthumbnail,opendocumentthumbnail,comicbookthumbnail,rawthumbnail
+
+[SettingsDialog]
+Height 1440=448
+Width 2560=655
+
+[kuick-move]
+Paths[$e]=/run/media/davidv7/01D525B7811668B0

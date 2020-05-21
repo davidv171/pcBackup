@@ -19,3 +19,26 @@ cp -R "$HOME/.config/books.md" "$root"
 cp -R "$HOME/.doom.d" "$root"
 cp -R "$HOME/.emacs.d" "$root"
 cp -R "$HOME/.tmux.conf" "$root"
+
+# KDE
+
+dest="$HOME/Documents/dots/KDE/"
+cp -R "$HOME/.config/kdeglobals" "$dest"
+cp -R "$HOME/.config/kglobalshortcutsrc" "$dest"
+cp -R "$HOME/.config/khotkeysrc" "$dest"
+cp -R "$HOME/.config/konsolerc" "$dest"
+cp -R "$HOME/.config/konversationrc" "$dest"
+cp -R "$HOME/.config/kwinrc" "$dest"
+cp -R "$HOME/.config/kwinrulesrc" "$dest"
+
+cp -R "$HOME/.config/dolphinrc" "$dest"
+cp -R "$HOME/.local/share/konsole/" "$dest"
+cp -R "$HOME/.local/share/yakuake/" "$dest"
+
+
+
+# Dumb scripts
+#
+scripts="$HOME/Documents/dots/Scripts"
+
+cp -R "HOME/Documents/Scripts/" "$scripts"

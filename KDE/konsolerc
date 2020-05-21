@@ -1,0 +1,32 @@
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
+[DownloadDialog Settings]
+Height 1440=481
+Width 2560=700
+
+[Favorite Profiles]
+Favorites=
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAkcAAAGCAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Window-Maximized 1024x1280=true
+Window-Maximized 1440x2560=true
+
+[Notification Messages]
+CloseAllTabs=true
+ShowPasteUnprintableWarning=true
+
+[Shortcut Schemes]
+Current Scheme=
+
+[TabBar]
+CloseTabOnMiddleMouseButton=true
+ExpandTabWidth=true
+NewTabButton=true

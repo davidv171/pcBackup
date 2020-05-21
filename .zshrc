@@ -105,6 +105,7 @@ alias attd="tmux attach -t dropdown"
 alias wt="tmux new -s work"
 alias attw="tmux attach -t work"
 alias ls="ls --color"
+alias gr="pkill gopls && gopls serve"
 
 
 # .zshrc
@@ -118,3 +119,7 @@ prompt pure
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+
+
+
+PATH=$PATH:~/Documents/Scripts/

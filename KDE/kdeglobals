@@ -1,0 +1,190 @@
+[$Version]
+update_info=kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects
+
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=112,111,110
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65
+ContrastEffect=1
+Enable=
+IntensityAmount=0.1
+IntensityEffect=0
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025
+ColorEffect=2
+ContrastAmount=0.1
+ContrastEffect=2
+Enable=true
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=210,210,210
+BackgroundNormal=238,238,238
+DecorationFocus=0,135,175
+DecorationHover=0,135,175
+ForegroundActive=215,95,0
+ForegroundInactive=188,188,188
+ForegroundLink=0,135,175
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=68,68,68
+ForegroundPositive=0,110,40
+ForegroundVisited=0,135,175
+
+[Colors:Complementary]
+BackgroundAlternate=59,64,69
+BackgroundNormal=49,54,59
+DecorationFocus=30,146,255
+DecorationHover=61,174,230
+ForegroundActive=246,116,0
+ForegroundInactive=175,176,179
+ForegroundLink=61,174,230
+ForegroundNegative=237,21,21
+ForegroundNeutral=201,206,59
+ForegroundNormal=239,240,241
+ForegroundPositive=17,209,22
+ForegroundVisited=61,174,230
+
+[Colors:Selection]
+BackgroundAlternate=53,132,228
+BackgroundNormal=0,135,175
+DecorationFocus=0,135,175
+DecorationHover=0,135,175
+ForegroundActive=215,95,0
+ForegroundInactive=0,135,175
+ForegroundLink=0,135,175
+ForegroundNegative=156,14,14
+ForegroundNeutral=255,221,0
+ForegroundNormal=238,238,238
+ForegroundPositive=128,255,128
+ForegroundVisited=0,135,175
+
+[Colors:Tooltip]
+BackgroundAlternate=0,0,0
+BackgroundNormal=68,68,68
+DecorationFocus=0,135,175
+DecorationHover=0,135,175
+ForegroundActive=215,95,0
+ForegroundInactive=188,188,188
+ForegroundLink=0,135,175
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=255,255,255
+ForegroundPositive=0,110,40
+ForegroundVisited=0,135,175
+
+[Colors:View]
+BackgroundAlternate=245,245,245
+BackgroundNormal=250,250,250
+DecorationFocus=0,135,175
+DecorationHover=0,135,175
+ForegroundActive=215,95,0
+ForegroundInactive=188,188,188
+ForegroundLink=0,135,175
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=68,68,68
+ForegroundPositive=0,110,40
+ForegroundVisited=0,135,175
+
+[Colors:Window]
+BackgroundAlternate=224,224,225
+BackgroundNormal=238,238,238
+DecorationFocus=0,135,175
+DecorationHover=0,135,175
+ForegroundActive=215,95,0
+ForegroundInactive=188,188,188
+ForegroundLink=0,135,175
+ForegroundNegative=191,3,3
+ForegroundNeutral=176,128,0
+ForegroundNormal=68,68,68
+ForegroundPositive=0,110,40
+ForegroundVisited=0,135,175
+
+[DesktopIcons]
+Size=32
+
+[DialogIcons]
+Size=32
+
+[DirSelect Dialog]
+DirSelectDialog Size=886,596
+History Items[$e]=file:$HOME/Videos/.wr1,file:///run/media/davidv7/01D525B7811668B0/b00ks/calibre,file:///run/media/davidv7/01D525B7811668B0/b00ks,file:///run/media/davidv7/01D525B7811668B0/Music,file:///run/media/davidv7/01D525B7811668B0
+
+[General]
+ColorScheme=Papercolor_light
+Name=Breeze
+XftHintStyle=hintslight
+XftSubPixel=rgb
+dbfile=/home/davidv7/.mozilla/firefox/w4sv2y7d.default/places.sqlite
+fixed=JetBrains Mono,9,-1,5,50,0,0,0,0,0,Regular
+font=JetBrains Mono,10,-1,5,50,0,0,0,0,0,Regular
+menuFont=JetBrains Mono,10,-1,5,50,0,0,0,0,0,Regular
+shadeSortColumn=true
+smallestReadableFont=JetBrains Mono,8,-1,5,50,0,0,0,0,0,Regular
+toolBarFont=JetBrains Mono,9,-1,5,50,0,0,0,0,0,Regular
+
+[Icons]
+Theme=breeze
+
+[KDE]
+AnimationDurationFactor=0.500000
+LookAndFeelPackage=org.openSUSE.desktop
+ShowDeleteCommand=false
+SingleClick=false
+contrast=4
+widgetStyle=Breeze
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Preview Width=317
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=true
+Show Speedbar=true
+Show hidden files=true
+Sort by=Date
+Sort directories first=true
+Sort reversed=true
+Speedbar Width=151
+View Style=DetailTree
+
+[KShortcutsDialog Settings]
+Dialog Size=1920,1015
+
+[MainToolbarIcons]
+Size=22
+
+[PanelIcons]
+Size=48
+
+[PreviewSettings]
+MaximumRemoteSize=0
+
+[SmallIcons]
+Size=16
+
+[ToolbarIcons]
+Size=22
+
+[WM]
+FakeEntryToKeepThisGroup=true
+activeBackground=250,250,250
+activeBlend=238,238,238
+activeFont=JetBrains Mono,10,-1,5,50,0,0,0,0,0,Regular
+activeForeground=0,0,0
+inactiveBackground=255,255,255
+inactiveBlend=255,255,255
+inactiveForeground=0,135,175
