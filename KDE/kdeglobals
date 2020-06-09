@@ -115,7 +115,7 @@ Size=32
 
 [DirSelect Dialog]
 DirSelectDialog Size=886,596
-History Items[$e]=file:$HOME/Videos/.wr1,file:///run/media/davidv7/01D525B7811668B0/b00ks/calibre,file:///run/media/davidv7/01D525B7811668B0/b00ks,file:///run/media/davidv7/01D525B7811668B0/Music,file:///run/media/davidv7/01D525B7811668B0
+History Items[$e]=file:///run/media/davidv7/01D525B7811668B0/Music,file:$HOME/Videos/.wr1,file:///run/media/davidv7/01D525B7811668B0/b00ks/calibre,file:///run/media/davidv7/01D525B7811668B0/b00ks,file:///run/media/davidv7/01D525B7811668B0
 
 [General]
 ColorScheme=Papercolor_light
@@ -134,7 +134,6 @@ toolBarFont=JetBrains Mono,9,-1,5,50,0,0,0,0,0,Regular
 Theme=breeze
 
 [KDE]
-AnimationDurationFactor=0.500000
 LookAndFeelPackage=org.openSUSE.desktop
 ShowDeleteCommand=false
 SingleClick=false
@@ -162,7 +161,7 @@ Speedbar Width=151
 View Style=DetailTree
 
 [KShortcutsDialog Settings]
-Dialog Size=1920,1015
+Dialog Size=1920,917
 
 [MainToolbarIcons]
 Size=22

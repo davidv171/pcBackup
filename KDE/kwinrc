@@ -7,12 +7,9 @@ OpenGLIsUnsafe=false
 
 [Desktops]
 Id_1=91da3a0d-9639-4937-ba61-1d4f51f8c7e6
-Id_2=7df4189d-6bf1-4bae-8fb8-c2410c81a64b
-Id_3=0d234a7b-31e2-402c-ad17-ba7d696e23dc
-Id_4=31165b22-d029-4e39-9558-e9e9deae9c39
-Name_3=Code
-Number=4
-Rows=3
+Id_2=74d75b3a-ad4f-4fac-9128-9ab9c986a3a5
+Number=2
+Rows=1
 
 [DrmOutputs][b2778fee13][800e58ee2e]
 Scale=1
@@ -27,6 +24,10 @@ TabBoxAlternative=false
 [Effect-FlipSwitch]
 TabBox=false
 TabBoxAlternative=false
+
+[Effect-PresentWindows]
+MiddleButtonWindow=6
+RightButtonWindow=4
 
 [MouseBindings]
 CommandActiveTitlebar1=Raise
@@ -54,8 +55,16 @@ Mode=Constant
 NightTemperature=3100
 
 [Plugins]
+ParachuteEnabled=false
+derpworkspaceEnabled=true
 desktopchangeosdEnabled=false
+hide-titlesEnabled=true
 highlightwindowEnabled=true
+kwin4_effect_eyeonscreenEnabled=true
+kwin4_effect_windowapertureEnabled=false
+minimizeallEnabled=false
+synchronizeskipswitcherEnabled=false
+videowallEnabled=false
 windowgeometryEnabled=false
 
 [Script-desktopchangeosd]

@@ -26,6 +26,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tmsvg/pear-tree'
     Plug 'vim-syntastic/syntastic'
     Plug 'lervag/vimtex'
+    Plug 'justinmk/vim-dirvish'
 
 call plug#end()
 set hidden
@@ -45,9 +46,36 @@ set termguicolors     " enable true colors support
 "colorscheme ayu
 set background=light
 colorscheme PaperColor
+
 let g:lightline = {
     \'colorscheme':'PaperColor',
+      \ 'tab_component_function': {
+      \   'filename': 'MyTabFilename'
+      \  }
 \ }
+
+function! MyTabFilename(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let bufnum = buflist[winnr - 1]
+  let bufname = expand('#'.bufnum.':t')
+  let buffullname = expand('#'.bufnum.':p')
+  let buffullnames = []
+  let bufnames = []
+  for i in range(1, tabpagenr('$'))
+    if i != a:n
+      let num = tabpagebuflist(i)[tabpagewinnr(i) - 1]
+      call add(buffullnames, expand('#' . num . ':p'))
+      call add(bufnames, expand('#' . num . ':t'))
+    endif
+  endfor
+  let i = index(bufnames, bufname)
+  if strlen(bufname) && i >= 0 && buffullnames[i] != buffullname
+    return substitute(buffullname, '.*/\([^/]\+/\)', '\1', '')
+  else
+    return strlen(bufname) ? bufname : '[No Name]'
+  endif
+endfunction
 nnoremap H :bprev<CR>
 nnoremap L :bnext<CR>
 
@@ -218,10 +246,9 @@ nnoremap J <C-W>j
 nmap <silent> gd <Plug>(coc-definition)
 inoremap <silent> <C-b> <Plug>(coc-definition)
 nnoremap <leader>rn <Plug>(coc-rename)
-nnoremap <Leader>grn <Plug>(coc-rename)
 nnoremap <leader>gi :!goimports -w %<CR>
 "map <C-a> <esc>ggVG<CR>
-inoremap <C-s> :w<CR>
+inoremap <C-s> :w!<CR>
 nmap <silent> <leader>td <Plug>(coc-type-definition)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 
@@ -232,24 +259,16 @@ nmap <silent> <leader>u <Plug>(coc-references)
 
 autocmd FileType go nmap <leader>gt :CocCommand go.test.generate.file<cr>
 
-nmap <silent> <leader>fw :w!<CR>
-nmap <silent> <leader>fq :q!<CR>
-nmap <leader>cd :cd /home/davidv7/<CR>
-nmap <leader>cb :cd ..<CR>
-nmap <silent> <leader>fb :Files<CR>
-nmap <leader>tt :!setxkbmap -option caps:escape<CR>
-nmap <leader>ll :!ls %:p<CR>
+command! CapsEscape :!setxkbmap -option caps:escape<CR>
+nnoremap <leader>ll :!ls %:p<CR>
 
 nnoremap <leader>cc :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>cf :Files %:p:h<CR>
-nnoremap <leader>ch :Files /home/davidv7/<CR>
-nnoremap <leader>cv :Files /home/davidv7/.config/<CR>
+nnoremap <leader>cg  :cd `git rev-parse --show-toplevel`<CR>
 
 "nmap <leader>to :TagbarToggle<CR>
 "nmap <leader>ts :TagbarShowTag<CR>
 nmap <leader>, :Rg<CR>
-nmap <leader>fi :Rg<CR>
-nmap <leader>hi :History<CR>
 
 nmap <silent> <F2> <Plug>(coc-diagnostic-prev)
 nmap <silent> <F3> <Plug>(coc-diagnostic-next)
@@ -272,7 +291,7 @@ nnoremap ql :silent! normal mpEA"<Esc>bi"<Esc>`pl
 nnoremap <A-r> :source ~/.config/nvim/init.vim<CR>
 "nnoremap <A-p> :MarkdownPreview<CR>
 nnoremap <Esc> :noh<CR>
-nnoremap <leader>rw :!chmod u+rw %<CR>
+command! ReadWrite :!chmod u+rw %<CR>
 nnoremap <leader>ts :sp<Esc><C-w>j<CR>:resize 10<Esc>:terminal<CR>
 tnoremap <Esc> <C-\><C-n>
 
@@ -311,6 +330,10 @@ fu! SplitNatural(...)
     endif
 endfu
 
+fu! NewTabAndCmd(cmd)
+    exec 'tabnew' | call execute(a:cmd)
+endfu
+
 " use :S <filenames...> to open 1 or more splits in a 'natural' way
 " this can be used with no args, which is identical to just calling a split
 " function
@@ -323,8 +346,8 @@ set splitbelow
 "
 
 nnoremap <leader>sn :call SplitNatural()<CR>
-nnoremap <leader>sf :call CreateCenteredFloatingWindow()<CR>
-nnoremap <leader>ft :call ToggleTerminal()<CR>
+"nnoremap <leader>sf :call CreateCenteredFloatingWindow()<CR>
+"nnoremap <leader>ft :call ToggleTerminal()<CR>
 
 
 
@@ -334,15 +357,13 @@ vmap <leader>p <Plug>(coc-format-selected)
 nnoremap <leader>qa :qa!<CR>
 
 "nnoremap <leader>gb :ToggleBlameLine<CR>
-nnoremap <leader>cal :pu=strftime('%c')<CR>
+command! Calendar :pu=strftime('%c')<CR>
 
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 
-
 "nnoremap H :tabprev<CR>
 "nnoremap L :tabn<CR>
-nnoremap <Leader>K :bd<CR>
 
 
 
@@ -442,14 +463,8 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
-nnoremap to :tabonly
 
 
-nnoremap <C-y> 1gt<CR>
-nnoremap <C-x> 2gt<CR>
-nnoremap <C-b> 4gt<CR>
-nnoremap <A-n> :tabnext<CR>
-nnoremap <A-p> :tabprev<CR>
 
 
 autocmd InsertLeave *.json setlocal conceallevel=2 concealcursor=inc
@@ -485,16 +500,6 @@ autocmd FileType bash,sh :SyntasticCheck<CR>
 
 
 
-" Buffer line binds
-"
-" o
-
-
-
-
-
-
-
 
 " LATEX
 "
@@ -502,6 +507,8 @@ let g:vimtex_view_general_viewer = 'okular'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 let g:vimtex_view_general_options_latexmk = '--unique'
 
+
+command! LatexCompile :!latexmk -pdf
 
 
 " Gamer moment stuff
@@ -524,7 +531,7 @@ nnoremap <C-j> <C-w>j<CR>
 nnoremap <C-k> <C-w>k<CR>
 set autochdir
 
-nnoremap <Leader>k :bd<CR>
+"nnoremap <Leader>k :bd<CR>
 " Go to last active tab
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-TAB> :exe "tabn ".g:lasttab<cr>
@@ -556,6 +563,7 @@ nnoremap <leader>ff :setlocal foldmethod=syntax<CR>zR<CR>
 " Toggle Fold, move one line above to stay on it
 nnoremap <leader>ft zA<CR>k
 
+"Replace word with clipboard
+nnoremap <leader>ar "odiWp<CR>
 
-
-
+nnoremap <leader>tn :call NewTabAndCmd(':Files')<CR>

@@ -60,6 +60,13 @@ function xc {
 function nv {
     nvim $(fzf)
 }
+function ns {
+    nix-shell -p $@
+}
+
+function nl {
+    nix-shell -p $@ && exec $1
+}
 
 function countdown(){
    date1=$((`date +%s` + $1));
@@ -106,14 +113,8 @@ alias wt="tmux new -s work"
 alias attw="tmux attach -t work"
 alias ls="ls --color"
 alias gr="pkill gopls && gopls serve"
+alias nixstuff="env -u LANG -u LC_MESSAGES -u LC_TIME -u LC_NUMERIC nix-env -iA nixpkgs.glibcLocales && export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive"
 
-
-# .zshrc
-fpath+=$HOME/.zsh/pure
-
-# .zshrc
-autoload -U promptinit; promptinit
-prompt pure
 
 # EDITOR
 export VISUAL=nvim
@@ -123,3 +124,13 @@ export EDITOR="$VISUAL"
 
 
 PATH=$PATH:~/Documents/Scripts/
+eval "$(starship init zsh)"
+
+
+ . /home/davidv7/.nix-profile/etc/profile.d/nix.sh
+
+
+
+
+
+
