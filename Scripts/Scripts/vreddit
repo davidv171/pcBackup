@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# If argument empty, use clipboard
+vreddit="$1"
+if [[ -z $1 ]];then
+	vreddit="$(xclip -selection clipboard)"
+fi
+
+# Get URL from argument, turn from last slash into json -> reddit.com/batw3/comments -> reddit.com/batw3.json
+
+cutrl=$(echo "$vreddit" | cut -s -f 1-7 -d "/")
+url="$cutrl.json"
+
+# Change agent so reddit doesn't complain and rate limit us
+link=$(curl -s -A "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0" "$url")
+
+# Find fallback URL value, usually like this: "fallback_url": "https://v.redd.it/vr0mlftfrtv41/DASH_480?source=fallback"
+fallback=$(echo "$link" |\
+	# https://regex101.com/r/8Ej3qM/1/ ,
+	# we parse the big json with regex because the structure is too large to bother with jq
+	grep -o 'fallback_url": "[^"]*"' |\
+		# Usually there's 2 identical results in there, we only need the first
+		head -n1 |\
+			# Take out the trash
+			awk '{gsub("fallback_url\":", "");print}' |\
+				# Take out more trash
+				tr -d '" ')
+
+echo "$fallback"
+
+echo "$fallback" | xclip -in -selection clipboard

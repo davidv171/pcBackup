@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1" == "local" ]]; then
+    ip addr show eno1 | grep 'inet ' | awk '{print $2}' | cut -f1 -d'/'
+fi
+
+if [[ "$1" == "global" ]];then
+    curl ifconfig.me
+fi
+

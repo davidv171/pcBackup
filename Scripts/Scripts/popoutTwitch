@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Example https://www.twitch.tv/popout/rwxrob/chat?popout=
+#
+#
+
+channel="$1"
+browser="$2"
+newwindow="$3"
+# Use theatron last if no args
+if [[ -z "$channel" ]];then
+    channel="$(tail -n 1 $HOME/Documents/Projects/Theatron/scripts/.currently_playing)"
+fi
+url="https://www.twitch.tv/popout/$channel/chat?popout="
+
+if [[ -z "$browser" ]]; then
+    xdg-open "$url"
+elif [[ -z "$newwindow" ]];then
+    "$browser" --new-window "$url"
+else
+   "$browser" "$url"
+fi
+
+
+

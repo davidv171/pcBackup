@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Pin all full-screen windows
+# 1920x1080+0+360
+
+primfull="$(wmctrl -l -G | grep '.x.* [0-9] 0.*1920 1080')"
+winids="$(echo "$primfull" | awk '{print $1;}')"
+
+for WINID in $winids
+do
+    echo "Pinning $WINID"
+    wmctrl -i -r "$WINID" -t -2
+done
+notify-send "Pinned monitor 1"
+
+

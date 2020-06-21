@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Mount the 1TB thing
+#
+
+mountpoint="$HOME/$1"
+if [[ -z $1 ]];then
+
+	test -d "$HOME/ehdd" || mkdir "$HOME/ehdd"
+	mountpoint="$HOME/ehdd"
+
+fi
+
+
+# Pick the disk through rofi
+
+device="$(lsblk |\
+	tail -n +2 |\
+	grep "└─" |\
+	awk '{gsub("└─","");print}' |\
+	tr -s ' ' |\
+	awk '{split($0,a);print a[1] " space: " a[4] " mounted on: " a[7]}' |\
+	rofi -dmenu |\
+	awk '{print $1}')"
+
+sudo mount "/dev/$device" "$mountpoint"
+
+
+

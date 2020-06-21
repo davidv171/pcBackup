@@ -1,0 +1,16 @@
+#!/bin/sh
+
+dest="$HOME/Documents/dots/KDE/"
+cp -R "$HOME/.config/kdeglobals" "$dest"
+cp -R "$HOME/.config/kglobalshortcutsrc" "$dest"
+cp -R "$HOME/.config/khotkeysrc" "$dest"
+cp -R "$HOME/.config/konsolerc" "$dest"
+cp -R "$HOME/.config/konversationrc" "$dest"
+
+cp -R "$HOME/.config/kwinrc" "$dest"
+cp -R "$HOME/.config/kwinrulesrc" "$dest"
+
+cp -R "$HOME/.config/dolphinrc" "$dest"
+
+
+

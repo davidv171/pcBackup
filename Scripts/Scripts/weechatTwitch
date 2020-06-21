@@ -1,0 +1,1 @@
+alacritty -e weechat --run-command "/server add twitch irc.chat.twitch.tv/6667;/connect twitch;/set irc.server.twitch.autojoin \"#${1}\";/bar toggle nicklist;/bar toggle buflist;/set weechat.look.buffer_time_format \"\";/buffer clear" &

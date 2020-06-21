@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ada4f01-e4ea-4819-8434-36c23af05991" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1VJ9px0L4slKmmX8J2iWi0aSvkk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Theatron" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2988" y="460" key="FileChooserDialogImpl" timestamp="1576963318548">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2988" y="460" key="FileChooserDialogImpl/1920.0.2560.1440/0.360.1920.1080/4480.416.1280.1024@1920.0.2560.1440" timestamp="1576963318548" />
+    <state width="2537" height="393" key="GridCell.Tab.0.bottom" timestamp="1576963319787">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2537" height="387" key="GridCell.Tab.0.bottom/0.360.1920.1080/4480.416.1280.1024/1920.0.2560.1440@1920.0.2560.1440" timestamp="1576962055547" />
+    <state width="2537" height="393" key="GridCell.Tab.0.bottom/1920.0.2560.1440/0.360.1920.1080/4480.416.1280.1024@1920.0.2560.1440" timestamp="1576963319787" />
+    <state width="2537" height="393" key="GridCell.Tab.0.center" timestamp="1576963319787">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2537" height="387" key="GridCell.Tab.0.center/0.360.1920.1080/4480.416.1280.1024/1920.0.2560.1440@1920.0.2560.1440" timestamp="1576962055547" />
+    <state width="2537" height="393" key="GridCell.Tab.0.center/1920.0.2560.1440/0.360.1920.1080/4480.416.1280.1024@1920.0.2560.1440" timestamp="1576963319787" />
+    <state width="2537" height="393" key="GridCell.Tab.0.left" timestamp="1576963319787">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2537" height="387" key="GridCell.Tab.0.left/0.360.1920.1080/4480.416.1280.1024/1920.0.2560.1440@1920.0.2560.1440" timestamp="1576962055547" />
+    <state width="2537" height="393" key="GridCell.Tab.0.left/1920.0.2560.1440/0.360.1920.1080/4480.416.1280.1024@1920.0.2560.1440" timestamp="1576963319787" />
+    <state width="2537" height="393" key="GridCell.Tab.0.right" timestamp="1576963319787">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2537" height="387" key="GridCell.Tab.0.right/0.360.1920.1080/4480.416.1280.1024/1920.0.2560.1440@1920.0.2560.1440" timestamp="1576962055547" />
+    <state width="2537" height="393" key="GridCell.Tab.0.right/1920.0.2560.1440/0.360.1920.1080/4480.416.1280.1024@1920.0.2560.1440" timestamp="1576963319787" />
+    <state x="2701" y="327" key="SettingsEditor" timestamp="1576960942568">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2701" y="327" key="SettingsEditor/0.360.1920.1080/4480.416.1280.1024/1920.0.2560.1440@1920.0.2560.1440" timestamp="1576960942568" />
+    <state x="2921" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1576962450702">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2921" y="328" key="com.intellij.ide.util.TipDialog/0.360.1920.1080/4480.416.1280.1024/1920.0.2560.1440@1920.0.2560.1440" timestamp="1576960520228" />
+    <state x="2921" y="328" key="com.intellij.ide.util.TipDialog/1920.0.2560.1440/0.360.1920.1080/4480.416.1280.1024@1920.0.2560.1440" timestamp="1576962450702" />
+  </component>
+</project>
