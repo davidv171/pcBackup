@@ -1,37 +1,77 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum
+
 [1]
+Description=Application settings for konversation
+clientmachinematch=0
+desktop=4
+desktoprule=1
+types=1
+wmclass=konversation
+wmclassmatch=1
+
+[10]
+Description=Discord
+desktop=1
+desktoprule=4
+screen=1
+screenrule=3
+wmclass=discord
+wmclasscomplete=false
+wmclassmatch=2
+
+[11]
+Description=Hexchat
+desktop=1
+desktoprule=4
+screen=1
+screenrule=4
+wmclass=hexchat
+wmclassmatch=2
+
+[2]
+Description=Application settings for mpv
+clientmachine=localhost
+clientmachinematch=0
+desktop=-1
+desktoprule=3
+wmclass=gl mpv
+wmclasscomplete=true
+wmclassmatch=1
+
+[3]
 Description=Application settings for alacritty
 clientmachine=localhost
 clientmachinematch=0
 fullscreen=true
 fullscreenrule=3
+titlematch=0
 wmclass=alacritty
-wmclasscomplete=false
 wmclassmatch=1
 
-[2]
+[4]
 Description=Window settings for jetbrains-idea
 activity=80f30439-5968-4342-b012-17967e1f947e
 activityrule=3
 clientmachine=localhost
 clientmachinematch=0
 title=gtms [~/Documents/work/gtms] - .../gtms-vps/src/main/java/com/lecip/tms/kmb/rest/custom/api/v1/etaexportkmb/EtaExportKmbHandlerApiV1.java [gtms-vps] - IntelliJ IDEA
-titlematch=0
 types=1
 wmclass=sun-awt-x11-xframepeer jetbrains-idea
 wmclasscomplete=true
 wmclassmatch=1
 
-[3]
+[5]
 Description=Application settings for skype
 activity=80f30439-5968-4342-b012-17967e1f947e
 activityrule=3
 clientmachine=localhost
 clientmachinematch=0
+titlematch=0
 wmclass=skype
-wmclasscomplete=false
 wmclassmatch=2
 
-[4]
+[6]
 Description=Window settings for telegramdesktop
 activity=80f30439-5968-4342-b012-17967e1f947e
 activityrule=3
@@ -44,7 +84,7 @@ wmclass=telegram-desktop
 wmclasscomplete=true
 wmclassmatch=2
 
-[5]
+[7]
 Description=Window settings for konsole
 clientmachine=localhost
 clientmachinematch=0
@@ -53,7 +93,6 @@ fullscreenrule=3
 noborder=true
 noborderrule=4
 title=~ : tmux: client — Konsole
-titlematch=0
 types=1
 windowrole=mainwindow#1
 windowrolematch=1
@@ -61,41 +100,19 @@ wmclass=tmux
 wmclasscomplete=false
 wmclassmatch=2
 
-[6]
+[8]
 Description=Application settings for konsole
 clientmachine=localhost
-clientmachinematch=0
-noborder=false
 noborderrule=2
 wmclass=konsole
 wmclasscomplete=false
 wmclassmatch=1
 
-[7]
+[9]
 Description=VLC
 desktop=1
 desktoprule=4
 wmclass=vlc
-wmclasscomplete=false
-wmclassmatch=2
-
-[8]
-Description=Discord
-desktop=1
-desktoprule=4
-screen=1
-screenrule=3
-wmclass=discord
-wmclasscomplete=false
-wmclassmatch=2
-
-[9]
-Description=Hexchat
-desktop=1
-desktoprule=4
-screen=1
-screenrule=4
-wmclass=hexchat
 wmclasscomplete=false
 wmclassmatch=2
 
@@ -104,7 +121,7 @@ dir_pixmap[$d]
 
 [General]
 BrowserApplication[$d]
-count=9
+count=11
 desktopFont[$d]
 fixed[$d]
 font[$d]

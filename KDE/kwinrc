@@ -8,7 +8,9 @@ OpenGLIsUnsafe=false
 [Desktops]
 Id_1=91da3a0d-9639-4937-ba61-1d4f51f8c7e6
 Id_2=74d75b3a-ad4f-4fac-9128-9ab9c986a3a5
-Number=2
+Id_3=6fd75103-478d-467e-a4a8-5847e6878d5d
+Id_4=1007de2b-1dad-4c82-924d-f73b5d05eb3b
+Number=4
 Rows=1
 
 [DrmOutputs][b2778fee13][800e58ee2e]
@@ -20,6 +22,10 @@ Scale=1
 [Effect-CoverSwitch]
 TabBox=false
 TabBoxAlternative=false
+
+[Effect-DesktopGrid]
+BorderWidth=30
+LayoutMode=1
 
 [Effect-FlipSwitch]
 TabBox=false
@@ -55,10 +61,10 @@ Mode=Constant
 NightTemperature=3100
 
 [Plugins]
-ParachuteEnabled=false
+ParachuteEnabled=true
 derpworkspaceEnabled=true
 desktopchangeosdEnabled=false
-hide-titlesEnabled=true
+hide-titlesEnabled=false
 highlightwindowEnabled=true
 kwin4_effect_eyeonscreenEnabled=true
 kwin4_effect_windowapertureEnabled=false

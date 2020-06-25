@@ -13,7 +13,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'NLKNguyen/papercolor-theme'
     "Plug 'arcticicestudio/nord-vim'
-    Plug 'ayu-theme/ayu-vim'
+    "Plug 'ayu-theme/ayu-vim'
     Plug 'itchyny/lightline.vim'
     "Plug 'taohexxx/lightline-buffer'
     Plug 'kshenoy/vim-signature'
@@ -26,7 +26,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tmsvg/pear-tree'
     Plug 'vim-syntastic/syntastic'
     Plug 'lervag/vimtex'
-    Plug 'justinmk/vim-dirvish'
+    Plug 'wellle/context.vim'
 
 call plug#end()
 set hidden
@@ -47,11 +47,13 @@ set termguicolors     " enable true colors support
 set background=light
 colorscheme PaperColor
 
+"let g:lightline = { 'colorscheme': 'material_vim', 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" }, 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }}
 let g:lightline = {
     \'colorscheme':'PaperColor',
       \ 'tab_component_function': {
       \   'filename': 'MyTabFilename'
-      \  }
+      \  },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" }, 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
 \ }
 
 function! MyTabFilename(n)
@@ -272,7 +274,7 @@ nmap <leader>, :Rg<CR>
 
 nmap <silent> <F2> <Plug>(coc-diagnostic-prev)
 nmap <silent> <F3> <Plug>(coc-diagnostic-next)
-nnoremap ; <Esc>A;
+"nnoremap ; <Esc>A;
     " 'quote' a word
 
 " double "quote" a word
@@ -567,3 +569,8 @@ nnoremap <leader>ft zA<CR>k
 nnoremap <leader>ar "odiWp<CR>
 
 nnoremap <leader>tn :call NewTabAndCmd(':Files')<CR>
+
+
+
+
+

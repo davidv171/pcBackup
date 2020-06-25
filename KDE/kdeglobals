@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects
+update_info=kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
 
 [ColorEffects:Disabled]
 ChangeSelectionColor=

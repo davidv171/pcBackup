@@ -51,30 +51,50 @@ Password=
 
 [Channel 100]
 EnableNotifications=true
-Name=#sodapopping
+Name=#gmhikaru
 Password=
 
 [Channel 101]
 EnableNotifications=true
-Name=#sneakylol
+Name=#fedmyster
 Password=
 
 [Channel 102]
 EnableNotifications=true
-Name=#clintstevens
+Name=#lilypichu
 Password=
 
 [Channel 103]
 EnableNotifications=true
-Name=#imls
+Name=#summit1g
 Password=
 
 [Channel 104]
 EnableNotifications=true
-Name=#imaqtpie
+Name=#sodapopping
 Password=
 
 [Channel 105]
+EnableNotifications=true
+Name=#sneakylol
+Password=
+
+[Channel 106]
+EnableNotifications=true
+Name=#clintstevens
+Password=
+
+[Channel 107]
+EnableNotifications=true
+Name=#imls
+Password=
+
+[Channel 108]
+EnableNotifications=true
+Name=#imaqtpie
+Password=
+
+[Channel 109]
 EnableNotifications=true
 Name=#boxbox
 Password=
@@ -120,53 +140,51 @@ Name=##rust
 Password=
 
 [Channel 20]
-EnableNotifications=true
-Name=#suse
+Name=#tmux
 Password=
 
 [Channel 21]
-EnableNotifications=true
-Name=#void
+Name=#latex
 Password=
 
 [Channel 22]
 EnableNotifications=true
-Name=#herbstluftwm
+Name=#suse
 Password=
 
 [Channel 23]
 EnableNotifications=true
-Name=##rust
+Name=#void
 Password=
 
 [Channel 24]
 EnableNotifications=true
-Name=##linux
+Name=#herbstluftwm
 Password=
 
 [Channel 25]
 EnableNotifications=true
-Name=#go-nuts
+Name=##rust
 Password=
 
 [Channel 26]
 EnableNotifications=true
-Name=#Node.js
+Name=##linux
 Password=
 
 [Channel 27]
 EnableNotifications=true
-Name=#ubuntu
+Name=#go-nuts
 Password=
 
 [Channel 28]
 EnableNotifications=true
-Name=#kde
+Name=#Node.js
 Password=
 
 [Channel 29]
 EnableNotifications=true
-Name=#nixos
+Name=#ubuntu
 Password=
 
 [Channel 3]
@@ -175,52 +193,52 @@ Password=
 
 [Channel 30]
 EnableNotifications=true
-Name=#archlinux
+Name=#kde
 Password=
 
 [Channel 31]
 EnableNotifications=true
-Name=#gentoo
+Name=#nixos
 Password=
 
 [Channel 32]
 EnableNotifications=true
-Name=#twitch
+Name=#archlinux
 Password=
 
 [Channel 33]
 EnableNotifications=true
-Name=##namespace
+Name=#gentoo
 Password=
 
 [Channel 34]
 EnableNotifications=true
-Name=#konversation
+Name=#twitch
 Password=
 
 [Channel 35]
 EnableNotifications=true
-Name=#shell
+Name=##namespace
 Password=
 
 [Channel 36]
 EnableNotifications=true
-Name=#bash
+Name=#konversation
 Password=
 
 [Channel 37]
 EnableNotifications=true
-Name=#wayland
+Name=#shell
 Password=
 
 [Channel 38]
 EnableNotifications=true
-Name=#vim
+Name=#bash
 Password=
 
 [Channel 39]
 EnableNotifications=true
-Name=#neovim
+Name=#wayland
 Password=
 
 [Channel 4]
@@ -229,52 +247,52 @@ Password=
 
 [Channel 40]
 EnableNotifications=true
-Name=#ubuntu-unregged
+Name=#vim
 Password=
 
 [Channel 41]
 EnableNotifications=true
-Name=#archlinux-unregistered
+Name=#neovim
 Password=
 
 [Channel 42]
 EnableNotifications=true
-Name=#streamlink
+Name=#ubuntu-unregged
 Password=
 
 [Channel 43]
 EnableNotifications=true
-Name=#videolan
+Name=#archlinux-unregistered
 Password=
 
 [Channel 44]
 EnableNotifications=true
-Name=#unixporn
+Name=#streamlink
 Password=
 
 [Channel 45]
 EnableNotifications=true
-Name=#fzf
+Name=#videolan
 Password=
 
 [Channel 46]
 EnableNotifications=true
-Name=#netsec
+Name=#unixporn
 Password=
 
 [Channel 47]
 EnableNotifications=true
-Name=#networksecurity
+Name=#fzf
 Password=
 
 [Channel 48]
 EnableNotifications=true
-Name=#cybersecurity
+Name=#netsec
 Password=
 
 [Channel 49]
 EnableNotifications=true
-Name=#it
+Name=#networksecurity
 Password=
 
 [Channel 5]
@@ -283,43 +301,47 @@ Password=
 
 [Channel 50]
 EnableNotifications=true
-Name=#macos
+Name=#cybersecurity
 Password=
 
 [Channel 51]
-Name=#yuli
+EnableNotifications=true
+Name=#it
 Password=
 
 [Channel 52]
-Name=#39daph
+EnableNotifications=true
+Name=#macos
 Password=
 
 [Channel 53]
-Name=#hasanabi
+EnableNotifications=true
+Name=#tmux
 Password=
 
 [Channel 54]
-Name=#hashinshin
+EnableNotifications=true
+Name=#latex
 Password=
 
 [Channel 55]
-Name=#moonmoon
+Name=#yuli
 Password=
 
 [Channel 56]
-Name=#admiralbahroo
+Name=#39daph
 Password=
 
 [Channel 57]
-Name=#drdisrespect
+Name=#hasanabi
 Password=
 
 [Channel 58]
-Name=#forsen
+Name=#hashinshin
 Password=
 
 [Channel 59]
-Name=#sodapoppin
+Name=#moonmoon
 Password=
 
 [Channel 6]
@@ -327,43 +349,43 @@ Name=#ubuntu
 Password=
 
 [Channel 60]
-Name=#pokimane
+Name=#admiralbahroo
 Password=
 
 [Channel 61]
-Name=#xchocobars
+Name=#drdisrespect
 Password=
 
 [Channel 62]
-Name=#voyboy
+Name=#forsen
 Password=
 
 [Channel 63]
-Name=#loltyler1
+Name=#sodapoppin
 Password=
 
 [Channel 64]
-Name=#dyrus
+Name=#pokimane
 Password=
 
 [Channel 65]
-Name=#dansgaming
+Name=#xchocobars
 Password=
 
 [Channel 66]
-Name=#cohhcarnage
+Name=#voyboy
 Password=
 
 [Channel 67]
-Name=#sooflower
+Name=#loltyler1
 Password=
 
 [Channel 68]
-Name=#destiny
+Name=#dyrus
 Password=
 
 [Channel 69]
-Name=#trihex
+Name=#dansgaming
 Password=
 
 [Channel 7]
@@ -371,47 +393,43 @@ Name=#kde
 Password=
 
 [Channel 70]
-Name=#gmhikaru
+Name=#cohhcarnage
 Password=
 
 [Channel 71]
-Name=#boxbox
+Name=#sooflower
 Password=
 
 [Channel 72]
-Name=#fedmyster
+Name=#destiny
 Password=
 
 [Channel 73]
-Name=#lilypichu
+Name=#trihex
 Password=
 
 [Channel 74]
-Name=#summit1g
+Name=#gmhikaru
 Password=
 
 [Channel 75]
-Name=#imaqtpie
+Name=#boxbox
 Password=
 
 [Channel 76]
-EnableNotifications=true
-Name=#yuli
+Name=#fedmyster
 Password=
 
 [Channel 77]
-EnableNotifications=true
-Name=#39daph
+Name=#lilypichu
 Password=
 
 [Channel 78]
-EnableNotifications=true
-Name=#ratirl
+Name=#summit1g
 Password=
 
 [Channel 79]
-EnableNotifications=true
-Name=#hasanabi
+Name=#imaqtpie
 Password=
 
 [Channel 8]
@@ -420,52 +438,52 @@ Password=
 
 [Channel 80]
 EnableNotifications=true
-Name=#hashinshin
+Name=#yuli
 Password=
 
 [Channel 81]
 EnableNotifications=true
-Name=#moonmoon
+Name=#39daph
 Password=
 
 [Channel 82]
 EnableNotifications=true
-Name=#admiralbahroo
+Name=#ratirl
 Password=
 
 [Channel 83]
 EnableNotifications=true
-Name=#drdisrespect
+Name=#hasanabi
 Password=
 
 [Channel 84]
 EnableNotifications=true
-Name=#forsen
+Name=#hashinshin
 Password=
 
 [Channel 85]
 EnableNotifications=true
-Name=#sodapoppin
+Name=#moonmoon
 Password=
 
 [Channel 86]
 EnableNotifications=true
-Name=#pokimane
+Name=#admiralbahroo
 Password=
 
 [Channel 87]
 EnableNotifications=true
-Name=#xchocobars
+Name=#drdisrespect
 Password=
 
 [Channel 88]
 EnableNotifications=true
-Name=#voyboy
+Name=#forsen
 Password=
 
 [Channel 89]
 EnableNotifications=true
-Name=#loltyler1
+Name=#sodapoppin
 Password=
 
 [Channel 9]
@@ -474,52 +492,52 @@ Password=
 
 [Channel 90]
 EnableNotifications=true
-Name=#dyrus
+Name=#pokimane
 Password=
 
 [Channel 91]
 EnableNotifications=true
-Name=#dansgaming
+Name=#xchocobars
 Password=
 
 [Channel 92]
 EnableNotifications=true
-Name=#cohhcarnage
+Name=#voyboy
 Password=
 
 [Channel 93]
 EnableNotifications=true
-Name=#sooflower
+Name=#loltyler1
 Password=
 
 [Channel 94]
 EnableNotifications=true
-Name=#destiny
+Name=#dyrus
 Password=
 
 [Channel 95]
 EnableNotifications=true
-Name=#trihex
+Name=#dansgaming
 Password=
 
 [Channel 96]
 EnableNotifications=true
-Name=#gmhikaru
+Name=#cohhcarnage
 Password=
 
 [Channel 97]
 EnableNotifications=true
-Name=#fedmyster
+Name=#sooflower
 Password=
 
 [Channel 98]
 EnableNotifications=true
-Name=#lilypichu
+Name=#destiny
 Password=
 
 [Channel 99]
 EnableNotifications=true
-Name=#summit1g
+Name=#trihex
 Password=
 
 [ChannelList ViewSettings]
@@ -581,9 +599,9 @@ ShowAwayMessage=false
 detailViewIconSize=0
 
 [MainWindow]
-Height 1080=1051
+Height 1080=1080
 Height 1440=1440
-State=AAAA/wAAAAD9AAAAAAAACgAAAAVtAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAACgAAAAVQAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1920=1920
 Width 2560=2560
@@ -627,8 +645,8 @@ Server=irc.twitch.tv
 
 [ServerGroup 0]
 AutoConnect=true
-AutoJoinChannels=Channel 0,Channel 1,Channel 2,Channel 3,Channel 4,Channel 5,Channel 6,Channel 7,Channel 8,Channel 9,Channel 10,Channel 11,Channel 12,Channel 13,Channel 14,Channel 15,Channel 16,Channel 17,Channel 18,Channel 19
-ChannelHistory=Channel 20,Channel 21,Channel 22,Channel 23,Channel 24,Channel 25,Channel 26,Channel 27,Channel 28,Channel 29,Channel 30,Channel 31,Channel 32,Channel 33,Channel 34,Channel 35,Channel 36,Channel 37,Channel 38,Channel 39,Channel 40,Channel 41,Channel 42,Channel 43,Channel 44,Channel 45,Channel 46,Channel 47,Channel 48,Channel 49,Channel 50
+AutoJoinChannels=Channel 0,Channel 1,Channel 2,Channel 3,Channel 4,Channel 5,Channel 6,Channel 7,Channel 8,Channel 9,Channel 10,Channel 11,Channel 12,Channel 13,Channel 14,Channel 15,Channel 16,Channel 17,Channel 18,Channel 19,Channel 20,Channel 21
+ChannelHistory=Channel 22,Channel 23,Channel 24,Channel 25,Channel 26,Channel 27,Channel 28,Channel 29,Channel 30,Channel 31,Channel 32,Channel 33,Channel 34,Channel 35,Channel 36,Channel 37,Channel 38,Channel 39,Channel 40,Channel 41,Channel 42,Channel 43,Channel 44,Channel 45,Channel 46,Channel 47,Channel 48,Channel 49,Channel 50,Channel 51,Channel 52,Channel 53,Channel 54
 ConnectCommands=
 EnableNotifications=true
 Expanded=true
@@ -639,8 +657,8 @@ ServerList=Server 0
 
 [ServerGroup 1]
 AutoConnect=true
-AutoJoinChannels=Channel 51,Channel 52,Channel 53,Channel 54,Channel 55,Channel 56,Channel 57,Channel 58,Channel 59,Channel 60,Channel 61,Channel 62,Channel 63,Channel 64,Channel 65,Channel 66,Channel 67,Channel 68,Channel 69,Channel 70,Channel 71,Channel 72,Channel 73,Channel 74,Channel 75
-ChannelHistory=Channel 76,Channel 77,Channel 78,Channel 79,Channel 80,Channel 81,Channel 82,Channel 83,Channel 84,Channel 85,Channel 86,Channel 87,Channel 88,Channel 89,Channel 90,Channel 91,Channel 92,Channel 93,Channel 94,Channel 95,Channel 96,Channel 97,Channel 98,Channel 99,Channel 100,Channel 101,Channel 102,Channel 103,Channel 104,Channel 105
+AutoJoinChannels=Channel 55,Channel 56,Channel 57,Channel 58,Channel 59,Channel 60,Channel 61,Channel 62,Channel 63,Channel 64,Channel 65,Channel 66,Channel 67,Channel 68,Channel 69,Channel 70,Channel 71,Channel 72,Channel 73,Channel 74,Channel 75,Channel 76,Channel 77,Channel 78,Channel 79
+ChannelHistory=Channel 80,Channel 81,Channel 82,Channel 83,Channel 84,Channel 85,Channel 86,Channel 87,Channel 88,Channel 89,Channel 90,Channel 91,Channel 92,Channel 93,Channel 94,Channel 95,Channel 96,Channel 97,Channel 98,Channel 99,Channel 100,Channel 101,Channel 102,Channel 103,Channel 104,Channel 105,Channel 106,Channel 107,Channel 108,Channel 109
 ConnectCommands=CAP REQ :twitch.tv/membership
 EnableNotifications=true
 Expanded=true

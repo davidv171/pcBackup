@@ -1,12 +1,5 @@
 {
   "languageserver": {
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
-    }
-  },
-  "languageserver": {
 
     "golang": {
       "command": "gopls",
@@ -15,6 +8,11 @@
       "initializationOptions": {
         "usePlaceholders": true
       }
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
     },
     "bash": {
       "command": "bash-language-server",
