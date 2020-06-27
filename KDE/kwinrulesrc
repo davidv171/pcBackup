@@ -2,25 +2,40 @@
 update_info=kwinrules.upd:replace-placement-string-to-enum
 
 [1]
-Description=Application settings for konversation
+Description=Firefox
 clientmachinematch=0
-desktop=4
-desktoprule=1
+shortcut=Meta+Shift+B
+shortcutrule=4
 types=1
-wmclass=konversation
-wmclassmatch=1
+wmclass=firefox
+wmclasscomplete=true
+wmclassmatch=2
 
 [10]
+Description=Application settings for konsole
+clientmachine=localhost
+noborderrule=2
+wmclass=konsole
+wmclasscomplete=false
+wmclassmatch=1
+
+[11]
+Description=VLC
+desktop=1
+desktoprule=4
+wmclass=vlc
+wmclassmatch=2
+
+[12]
 Description=Discord
 desktop=1
 desktoprule=4
 screen=1
 screenrule=3
 wmclass=discord
-wmclasscomplete=false
 wmclassmatch=2
 
-[11]
+[13]
 Description=Hexchat
 desktop=1
 desktoprule=4
@@ -30,6 +45,25 @@ wmclass=hexchat
 wmclassmatch=2
 
 [2]
+Description=Application settings for konversation
+clientmachinematch=0
+desktop=4
+desktoprule=1
+types=1
+wmclass=konversation
+wmclassmatch=1
+
+[3]
+Description=Application settings for konversation
+clientmachinematch=0
+desktop=4
+desktoprule=1
+titlematch=0
+types=1
+wmclass=konversation
+wmclassmatch=1
+
+[4]
 Description=Application settings for mpv
 clientmachine=localhost
 clientmachinematch=0
@@ -39,55 +73,55 @@ wmclass=gl mpv
 wmclasscomplete=true
 wmclassmatch=1
 
-[3]
-Description=Application settings for alacritty
-clientmachine=localhost
+[5]
+Description=Alacritty
 clientmachinematch=0
-fullscreen=true
+desktop=3
+desktoprule=1
 fullscreenrule=3
+shortcut=Meta+Shift+K
+shortcutrule=4
 titlematch=0
+types=1
 wmclass=alacritty
 wmclassmatch=1
 
-[4]
+[6]
 Description=Window settings for jetbrains-idea
 activity=80f30439-5968-4342-b012-17967e1f947e
 activityrule=3
 clientmachine=localhost
 clientmachinematch=0
 title=gtms [~/Documents/work/gtms] - .../gtms-vps/src/main/java/com/lecip/tms/kmb/rest/custom/api/v1/etaexportkmb/EtaExportKmbHandlerApiV1.java [gtms-vps] - IntelliJ IDEA
+titlematch=0
 types=1
 wmclass=sun-awt-x11-xframepeer jetbrains-idea
 wmclasscomplete=true
 wmclassmatch=1
 
-[5]
+[7]
 Description=Application settings for skype
 activity=80f30439-5968-4342-b012-17967e1f947e
 activityrule=3
 clientmachine=localhost
 clientmachinematch=0
-titlematch=0
 wmclass=skype
 wmclassmatch=2
 
-[6]
+[8]
 Description=Window settings for telegramdesktop
 activity=80f30439-5968-4342-b012-17967e1f947e
 activityrule=3
 clientmachine=localhost
-clientmachinematch=0
 title=Telegram
-titlematch=0
 types=1
 wmclass=telegram-desktop
 wmclasscomplete=true
 wmclassmatch=2
 
-[7]
+[9]
 Description=Window settings for konsole
 clientmachine=localhost
-clientmachinematch=0
 fullscreen=true
 fullscreenrule=3
 noborder=true
@@ -100,28 +134,12 @@ wmclass=tmux
 wmclasscomplete=false
 wmclassmatch=2
 
-[8]
-Description=Application settings for konsole
-clientmachine=localhost
-noborderrule=2
-wmclass=konsole
-wmclasscomplete=false
-wmclassmatch=1
-
-[9]
-Description=VLC
-desktop=1
-desktoprule=4
-wmclass=vlc
-wmclasscomplete=false
-wmclassmatch=2
-
 [Directories]
 dir_pixmap[$d]
 
 [General]
 BrowserApplication[$d]
-count=11
+count=13
 desktopFont[$d]
 fixed[$d]
 font[$d]
