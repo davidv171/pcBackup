@@ -38,7 +38,7 @@ Window-Maximized 1440x2560=true
 
 [Open-with settings]
 CompletionMode=1
-History=cali,mpv,calibre
+History=datagr,cali,mpv,calibre
 
 [PreviewSettings]
 Plugins=svgthumbnail,ffmpegthumbs,ebookthumbnail,blenderthumbnail,windowsexethumbnail,djvuthumbnail,mobithumbnail,audiothumbnail,windowsimagethumbnail,imagethumbnail,jpegthumbnail,exrthumbnail,fontthumbnail,directorythumbnail,kraorathumbnail,gsthumbnail,opendocumentthumbnail,comicbookthumbnail,rawthumbnail

@@ -1,4 +1,5 @@
 {
+  "coc-actions.hideCursor": false,
   "languageserver": {
 
     "golang": {

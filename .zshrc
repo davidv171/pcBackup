@@ -114,7 +114,11 @@ alias attw="tmux attach -t work"
 alias ls="ls --color"
 alias gr="pkill gopls && gopls serve"
 alias nixstuff="env -u LANG -u LC_MESSAGES -u LC_TIME -u LC_NUMERIC nix-env -iA nixpkgs.glibcLocales && export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive"
-alias owncloud="docker run -v /run/media/davidv7/01D525B7811668B0:/var/www/html/data -d -p 80:80 owncloud:latest"
+alias owncloud="docker run \
+    -p 80:80 \
+    -v /home/davidv7/Downloads/owncloud/data:/var/www/html/data  \
+    -v /home/davidv7/Downloads/owncloud/config:/var/www/html/config/ \
+    owncloud:latest"
 
 # EDITOR
 export VISUAL=nvim

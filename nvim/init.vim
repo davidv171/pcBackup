@@ -249,7 +249,11 @@ nnoremap J <C-W>j
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 inoremap <silent> <C-b> <Plug>(coc-definition)
-nnoremap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>rn :CocCommand document.renameCurrentWord<CR>
+"nnoremap <A-o> <Plug>(coc-rename)
+
+nnoremap <A-o> :CocCommand document.renameCurrentWord<CR>
+
 nnoremap <leader>gi :!goimports -w %<CR>
 "map <C-a> <esc>ggVG<CR>
 inoremap <C-s> :w!<CR>
@@ -264,6 +268,7 @@ nmap <silent> <leader>u <Plug>(coc-references)
 autocmd FileType go nmap <leader>gt :CocCommand go.test.generate.file<cr>
 
 command! CapsEscape :!setxkbmap -option caps:escape<CR>
+command! Rename :CocCommand document.renameCurrentWord<CR>
 nnoremap <leader>ll :!ls %:p<CR>
 
 nnoremap <leader>cc :cd %:p:h<CR>:pwd<CR>
@@ -362,6 +367,7 @@ nnoremap <leader>qa :qa!<CR>
 
 "nnoremap <leader>gb :ToggleBlameLine<CR>
 command! Calendar :pu=strftime('%c')<CR>
+
 
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
@@ -593,6 +599,17 @@ function! s:cocActionsOpenFromSelected(type) abort
 endfunction
 xmap <silent> <A-Enter> :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <A-Enter> :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@<CR>
+nmap <silent> <A-w> :w<CR>
+
+imap <silent> <A-w> :w<CR>
+
+
+
+
+
+
+
+
 
 
 
